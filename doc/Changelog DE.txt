@@ -1,0 +1,44 @@
+Tic Tac Py - Tkinter Edition, Version 0.8 Beta
+- Abgeschlossen am 19.12.2021
+- Das Spiel ist nicht länger in der Alpha, sondern in der Open Beta. Veröffentlicht unter der BSD-Lizenz in der Version 3, welches auch im Über-Fenster gelesen werden kann.
+- Ich plane eine neue Fassung des Spiels, daher wurde dieser Fassung der Zusatz "Tkinter Edition" gegeben.
+- Es gibt nun Binaries für Windows, leider müssen Avira-Nutzer ihren Antivirus jedoch abschalten oder das Spiel aus der Quarantäne holen. Ich entschuldige mich für die Unannehmlichkeiten.
+- Die Spracheinstellungen wurden (hoffentlich) verbessert.
+
+Tic Tac Py, Version 0.7 Alpha
+- Abgeschlossen am 28.11.2021
+- Das Spiel ist zu einfach? Dann probieren Sie den neuen, schwereren Spieler gegen Computer-Modus aus!
+- Die Sprachpakete für Englisch (Kanada), Englisch (Australien), Deutsch (Österreich) und Deutsch (Schweiz) wurden hinzugefügt.
+- In den Spracheinstellungen wurde die Nachricht geändert.
+- In diesem Changelog wurden Sie teilweise geduzt. Das habe ich hier korrigiert.
+
+Tic Tac Py, Version 0.6 Alpha
+- Abgeschlossen am: 22.11.2021
+- Platzhalter korrigieren hier Layoutfehler
+- Haben Sie die Fenster mal vergrößert und sich gewundert, warum die Widgets nicht mitwuchsen? Das wurde durch eine Blockade gelöst. Ich entschuldige mich für die Unannehmlichkeiten. :(
+
+Tic Tac Py, Version 0.5.2 Alpha
+- Abgeschlossen am: 21.11.2021
+- Es wurde ein Fehler behoben, in dem die Buttons nicht gezeigt wurden, wenn Spieler 1 im PVP-Modus gewinnt.
+- Die Anleitung für die Installation von Sprachpaketen wurde korrigiert.
+
+Tic Tac Py, Version 0.5.1 Alpha
+- Abgeschlossen am: 20.11.2021
+- Die Änderungen am Layout wurden nun am ganzen Spiel vorgenommen.
+- Damit wurde auch ein Bug, mit der die Zellen sich überlappen, wenn das Spiel unter Ubuntu 20.04 LTS ausgeführt wird, beseitigt.
+- Der sinnlose Text im Spieler gegen Computer-Modus wurde ebenfalls entfernt.
+
+Tic Tac Py, Version 0.5 Alpha
+- Abgeschlossen am: 19.11.2021
+- Einstellungen wurden eingefügt, Sie können jetzt das Spiel in Ihrer bevorzugten Sprache spielen.
+- Änderungen am Layout-Teil des Codes sind geplant und sogar bereits in den Einstellungen und im Hauptmenü vorgenommen. Der Rest wird diese Änderungen in den kommenden Updates erhalten.
+- Die Versionsnummer wird auf den Titelleisten der Fenster nicht länger angezeigt.
+
+Tic Tac Py, Version 0.4 Alpha
+- Abgeschlossen am: 14.11.2021
+- Dieser Code wurde optimiert, indem eine Klasse gesetzt wurde.
+- Dadurch konnte dieses Spiel in folgende Sprachen übersetzt werden:
+ - Amerikanisches Englisch
+ - Britisches Englisch
+ - Deutsches Deutsch
+- Dieser Changelog wird ab dieser Version auf Deutsch übersetzt!

@@ -1,0 +1,11 @@
+1. Download the language from the Tic Tac Py Tkinter Edition Github page or any other reliable website.
+
+2. Copy the language to the following directories:
+Windows: <letter>:\<gamedir>\gamemodes\locales\languages
+Linux: /<gamedir>/gamemodes/locales/languages
+
+Please type the actual letter and game directory instead of <letter> and <gamedir>. Due to the lack of a Mac, I can't help those running macOS, so you will have to determine the directory yourself. Running the game on other platforms isn't supported.
+
+3. Start the game. You may need to adjust the language in the settings.
+
+4. If you set the language, you need to restart the game. Then, have fun!

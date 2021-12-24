@@ -1,0 +1,57 @@
+Tic Tac Py - Tkinter Edition, Version 0.8 Beta
+- Date of completion: 19th December, 2021
+- The game is an alpha no more - it's an open beta now. Released under the BSD license 3, which is also mentioned in the About window.
+- A new edition of this game is planned. As such, this one has been given the additional name "Tkinter Edition".
+- Binaries for Windows are now available, but users of Avira will have to turn off the antivirus or get the game out of quarantine. Sorry for the inconvinience.
+- The language settings have been (hopefully) improved.
+
+Tic Tac Py, Version 0.7 Alpha
+- Date of completion: 28th November, 2021
+- The game is too easy? Then play the new, harder Player vs. Computer mode!
+- Added the language packs for English (Canada), English (Australia), German (Austria) and German (Switzerland).
+- Changed the message in the language settings.
+
+Tic Tac Py, Version 0.6 Alpha
+- Date of completion: 22nd November, 2021
+- Placeholders are now correcting layout mistakes
+- Have you resized the windows and wondered why the widgets didn't resize as well? Solved by blocking resizing! Sorry for the inconvinience. :(
+
+Tic Tac Py, Version 0.5.2 Alpha
+- Date of completion: 21st November, 2021
+- A bug where the buttons weren't shown if player 1 won in the pvp mode has been corrected.
+- The instructions for the installation of language packs have been corrected.
+
+Tic Tac Py, Version 0.5.1 Alpha
+- Date of completion: 20th November, 2021
+- The changes in the layout take place in the entire game now.
+- With this change, a bug where the cells overlap when the game is running on Ubuntu 20.04 LTS has been corrected.
+- Also, the nonsense text in the Player vs. Computer mode is gone.
+
+Tic Tac Py, Version 0.5 Alpha
+- Date of completion: 19th November, 2021
+- A setting menu has been added so you can set your preferred language now.
+- Changes in the layout part of the code are planned and already took place in the settings and the main menu. More parts of the game will get these changes in future updates.
+- The version number will no longer be displayed on the window title bars.
+
+Tic Tac Py, Version 0.4 Alpha
+- Date of completion: 14th November, 2021
+- The code has been optimized by setting a class.
+- This made it possible to translate the game into following languages:
+ - American English
+ - British English
+ - German German
+- This changelog will be translated to German from this version on!
+
+Tic Tac Py, Version 0.3.1 Alpha
+- Date of completion: 7th November, 2021
+- Layout mistakes have been partially corrected by...
+ - ...setting the font to Arial. If your operating system supports daily usage but doesn't support this font, I'm sorry.
+ - ...embiggening the font to ensure the text is better to read.
+ - ...correcting window sizes.
+- A nonsense text has been placed in the Player vs. Computer mode as a placeholder.
+
+Tic Tac Py, Version 0.3 Alpha
+- Date of completion: 4th November, 2021
+- This changelog has been added.
+- This game is now a GUI made with Tkinter.
+- Python 3.10 is now the primary focus for this game as this is now the newest version of Python. Windows 10 on the other hand will stay the main OS for the game as my PC isn't eligible for running Windows 11. :(
