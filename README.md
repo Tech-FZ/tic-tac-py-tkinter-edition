@@ -10,7 +10,13 @@ Just download the game from the releases, extract the archive and have fun. Thos
 
 You will need a machine where Windows and Python are installed.
 
-1. Download the source code
-2. Extract the archive
-3. Disconnect your computer from the internet and deactivate your antivirus. (Yes, this step is required)
-4. Open a command prompt in the directory
+1. Download the source code.
+2. Extract the archive.
+3. Open a command prompt in the directory.
+4. Type in the following command: pyinstaller --onefile main.py
+5. Copy the doc and gamemodes folders into the directory where the binary is.
+6. Test the result. You may need to get the executable out of quarantine first.
+
+# Contribute
+
+Good at making icons? Wanna help translate the game so more people can play? Any other ideas? You're always welcome to contribute.
