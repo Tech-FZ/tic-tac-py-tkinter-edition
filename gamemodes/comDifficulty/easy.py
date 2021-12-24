@@ -1,0 +1,573 @@
+import gamemodes.assets.cells
+import gamemodes.assets.turnCounter
+from random import randint
+from tkinter import *
+
+# Player is O, Computer is X.
+
+def playerVsComputer(ticTacPyApp):
+    def fieldFilled():
+        notice = Toplevel(gamepvcom)
+        notice.geometry()
+        notice.resizable(width=0, height=0)
+
+        noticeText = Label(notice, text=ticTacPyApp.fieldFilledWarning, font=("Arial", 16))
+        noticeText.pack()
+
+        noticeButton = Button(notice, text=ticTacPyApp.okay, font=("Arial", 12))
+        noticeButton["command"] = notice.destroy
+        noticeButton.pack()
+
+        placeholder7 = Label(notice, text="", font=("Arial", 2))
+        placeholder7.pack()
+
+    def playerWon():
+        def effectOfYes():
+            playerOnFirstPlace.destroy()
+            wannaPlayMore()
+        
+        # Resetting the turns
+        gamemodes.assets.turnCounter.playerOne = 0
+        gamemodes.assets.turnCounter.playerTwo = 0
+
+        playerOnFirstPlace = Toplevel(gamepvcom)
+        playerOnFirstPlace.geometry()
+        playerOnFirstPlace.resizable(width=0, height=0)
+
+        winnerText = Label(playerOnFirstPlace, text=f"{ticTacPyApp.playerWonText}\n{ticTacPyApp.playAgainQuestion}", font=("Arial", 16))
+        winnerText.grid(row=0, column=0, columnspan=3)
+
+        yesButton = Button(playerOnFirstPlace, text=ticTacPyApp.yes, font=("Arial", 12))
+        yesButton["command"] = effectOfYes
+        yesButton.grid(row=1, column=0)
+
+        noButton = Button(playerOnFirstPlace, text=ticTacPyApp.no, font=("Arial", 12))
+        noButton["command"] = doneWithPlaying
+        noButton.grid(row=1, column=2)
+
+        placeholder7 = Label(playerOnFirstPlace, text="", font=("Arial", 2))
+        placeholder7.grid(row=2)
+    
+    def playerLost():
+        def effectOfYes():
+            playerOnSecondPlace.destroy()
+            wannaPlayMore()
+
+        # Resetting the turns
+        gamemodes.assets.turnCounter.playerOne = 0
+        gamemodes.assets.turnCounter.playerTwo = 0
+
+        playerOnSecondPlace = Toplevel(gamepvcom)
+        playerOnSecondPlace.geometry()
+        playerOnSecondPlace.resizable(width=0, height=0)
+
+        loserText = Label(playerOnSecondPlace, text=f"{ticTacPyApp.playerLostText}\n{ticTacPyApp.playAgainQuestion}", font=("Arial", 16))
+        loserText.grid(row=0, column=0, columnspan=3)
+
+        yesButton = Button(playerOnSecondPlace, text=ticTacPyApp.yes, font=("Arial", 12))
+        yesButton["command"] = effectOfYes
+        yesButton.grid(row=1, column=0)
+
+        noButton = Button(playerOnSecondPlace, text=ticTacPyApp.no, font=("Arial", 12))
+        noButton["command"] = doneWithPlaying
+        noButton.grid(row=1, column=2)
+
+        placeholder7 = Label(playerOnSecondPlace, text="", font=("Arial", 2))
+        placeholder7.grid(row=2)
+    
+    def nobodyWon():
+        def effectOfYes():
+            playerEqual.destroy()
+            wannaPlayMore()
+
+        # Resetting the turns
+        gamemodes.assets.turnCounter.playerOne = 0
+        gamemodes.assets.turnCounter.playerTwo = 0
+
+        playerEqual = Toplevel(gamepvcom)
+        playerEqual.geometry()
+        playerEqual.resizable(width=0, height=0)
+
+        equalText = Label(playerEqual, text=f"{ticTacPyApp.tieText}\n{ticTacPyApp.playAgainQuestion}", font=("Arial", 16))
+        equalText.grid(row=0, column=0, columnspan=3)
+
+        yesButton = Button(playerEqual, text=ticTacPyApp.yes, font=("Arial", 12))
+        yesButton["command"] = effectOfYes
+        yesButton.grid(row=1, column=0)
+
+        noButton = Button(playerEqual, text=ticTacPyApp.no, font=("Arial", 12))
+        noButton["command"] = doneWithPlaying
+        noButton.grid(row=1, column=2)
+        
+        placeholder7 = Label(playerEqual, text="", font=("Arial", 2))
+        placeholder7.grid(row=2)
+
+    def doneWithPlaying():
+        gamepvcom.destroy()
+
+        # Resetting the cells
+        gamemodes.assets.cells.cell0 = " "
+        gamemodes.assets.cells.cell1 = " "
+        gamemodes.assets.cells.cell2 = " "
+        gamemodes.assets.cells.cell3 = " "
+        gamemodes.assets.cells.cell4 = " "
+        gamemodes.assets.cells.cell5 = " "
+        gamemodes.assets.cells.cell6 = " "
+        gamemodes.assets.cells.cell7 = " "
+        gamemodes.assets.cells.cell8 = " "
+    
+    def wannaPlayMore():
+        # Resetting the cells
+        gamemodes.assets.cells.cell0 = " "
+        gamemodes.assets.cells.cell1 = " "
+        gamemodes.assets.cells.cell2 = " "
+        gamemodes.assets.cells.cell3 = " "
+        gamemodes.assets.cells.cell4 = " "
+        gamemodes.assets.cells.cell5 = " "
+        gamemodes.assets.cells.cell6 = " "
+        gamemodes.assets.cells.cell7 = " "
+        gamemodes.assets.cells.cell8 = " "
+
+        # Hiding player marks
+        buttonForCellZeroP.grid_forget()
+        buttonForCellOneP.grid_forget()
+        buttonForCellTwoP.grid_forget()
+        buttonForCellThreeP.grid_forget()
+        buttonForCellFourP.grid_forget()
+        buttonForCellFiveP.grid_forget()
+        buttonForCellSixP.grid_forget()
+        buttonForCellSevenP.grid_forget()
+        buttonForCellEightP.grid_forget()
+
+        # Hiding computer marks
+        buttonForCellZeroCom.grid_forget()
+        buttonForCellOneCom.grid_forget()
+        buttonForCellTwoCom.grid_forget()
+        buttonForCellThreeCom.grid_forget()
+        buttonForCellFourCom.grid_forget()
+        buttonForCellFiveCom.grid_forget()
+        buttonForCellSixCom.grid_forget()
+        buttonForCellSevenCom.grid_forget()
+        buttonForCellEightCom.grid_forget()
+
+        # Placing empty cells back
+        buttonForCellZero.grid(row=1, column=1)
+        buttonForCellOne.grid(row=1, column=3)
+        buttonForCellTwo.grid(row=1, column=5)
+        buttonForCellThree.grid(row=3, column=1)
+        buttonForCellFour.grid(row=3, column=3)
+        buttonForCellFive.grid(row=3, column=5)
+        buttonForCellSix.grid(row=5, column=1)
+        buttonForCellSeven.grid(row=5, column=3)
+        buttonForCellEight.grid(row=5, column=5)
+
+    def checkState():
+        # Checking rows
+
+        if gamemodes.assets.cells.cell0 == gamemodes.assets.cells.cell1 == gamemodes.assets.cells.cell2:
+            if gamemodes.assets.cells.cell1 == "O":
+                playerWon()
+
+            elif gamemodes.assets.cells.cell1 == "X":
+                playerLost()
+        
+        elif gamemodes.assets.cells.cell3 == gamemodes.assets.cells.cell4 == gamemodes.assets.cells.cell5:
+            if gamemodes.assets.cells.cell3 == "O":
+                playerWon()
+
+            elif gamemodes.assets.cells.cell3 == "X":
+                playerLost()
+                    
+        elif gamemodes.assets.cells.cell6 == gamemodes.assets.cells.cell7 == gamemodes.assets.cells.cell8:
+            if gamemodes.assets.cells.cell6 == "O":
+                playerWon()
+
+            elif gamemodes.assets.cells.cell6 == "X":
+                playerLost()
+                    
+        # Checking columns
+
+        elif gamemodes.assets.cells.cell3 == gamemodes.assets.cells.cell0 == gamemodes.assets.cells.cell6:
+            if gamemodes.assets.cells.cell3 == "O":
+                playerWon()
+
+            elif gamemodes.assets.cells.cell3 == "X":
+                playerLost()
+                    
+        elif gamemodes.assets.cells.cell1 == gamemodes.assets.cells.cell4 == gamemodes.assets.cells.cell7:
+            if gamemodes.assets.cells.cell1 == "O":
+                playerWon()
+
+            elif gamemodes.assets.cells.cell1 == "X":
+                playerLost()
+                    
+        elif gamemodes.assets.cells.cell2 == gamemodes.assets.cells.cell8 == gamemodes.assets.cells.cell5:
+            if gamemodes.assets.cells.cell2 == "O":
+                playerWon()
+
+            elif gamemodes.assets.cells.cell2 == "X":
+                playerLost()
+                    
+        # Checking diagonals (Sorry for my bad English, I primarily speak German. :( )
+
+        elif gamemodes.assets.cells.cell0 == gamemodes.assets.cells.cell4 == gamemodes.assets.cells.cell8:
+            if gamemodes.assets.cells.cell0 == "O":
+                playerWon()
+
+            elif gamemodes.assets.cells.cell0 == "X":
+                playerLost()
+                    
+        elif gamemodes.assets.cells.cell2 == gamemodes.assets.cells.cell4 == gamemodes.assets.cells.cell6:
+            if gamemodes.assets.cells.cell2 == "O":
+                playerWon()
+
+            elif gamemodes.assets.cells.cell2 == "X":
+                playerLost()
+                    
+        # Checking if full
+
+        elif gamemodes.assets.cells.cell0 != " " and gamemodes.assets.cells.cell1 != " " and gamemodes.assets.cells.cell2 != " " and gamemodes.assets.cells.cell3 != " ":
+            if gamemodes.assets.cells.cell4 != " " and gamemodes.assets.cells.cell5 != " " and gamemodes.assets.cells.cell6 != " ":
+                if gamemodes.assets.cells.cell7 != " " and gamemodes.assets.cells.cell8 != " ":
+                    nobodyWon()
+
+    # Here is the real game
+
+    def fieldZeroPlayer():
+        if gamemodes.assets.cells.cell0 == " ":
+            gamemodes.assets.cells.cell0 = "O"
+            buttonForCellZero.grid_forget()
+            buttonForCellZeroP.grid(row=1, column=1)
+            gamemodes.assets.turnCounter.playerOne += 1
+            computerTurn()
+            
+    def fieldOnePlayer():
+        if gamemodes.assets.cells.cell1 == " ":
+            gamemodes.assets.cells.cell1 = "O"
+            buttonForCellOne.grid_forget()
+            buttonForCellOneP.grid(row=1, column=3)
+            gamemodes.assets.turnCounter.playerOne += 1
+            computerTurn()
+            
+    def fieldTwoPlayer():
+        if gamemodes.assets.cells.cell2 == " ":
+            gamemodes.assets.cells.cell2 = "O"
+            buttonForCellTwo.grid_forget()
+            buttonForCellTwoP.grid(row=1, column=5)
+            gamemodes.assets.turnCounter.playerOne += 1
+            computerTurn()
+        
+    def fieldThreePlayer():
+        if gamemodes.assets.cells.cell3 == " ":
+            gamemodes.assets.cells.cell3 = "O"
+            buttonForCellThree.grid_forget()
+            buttonForCellThreeP.grid(row=3, column=1)
+            gamemodes.assets.turnCounter.playerOne += 1
+            computerTurn()
+        
+    def fieldFourPlayer():
+        if gamemodes.assets.cells.cell4 == " ":
+            gamemodes.assets.cells.cell4 = "O"
+            buttonForCellFour.grid_forget()
+            buttonForCellFourP.grid(row=3, column=3)
+            gamemodes.assets.turnCounter.playerOne += 1
+            computerTurn()
+        
+    def fieldFivePlayer():
+        if gamemodes.assets.cells.cell5 == " ":
+            gamemodes.assets.cells.cell5 = "O"
+            buttonForCellFive.grid_forget()
+            buttonForCellFiveP.grid(row=3, column=5)
+            gamemodes.assets.turnCounter.playerOne += 1
+            computerTurn()
+        
+    def fieldSixPlayer():
+        if gamemodes.assets.cells.cell6 == " ":
+            gamemodes.assets.cells.cell6 = "O"
+            buttonForCellSix.grid_forget()
+            buttonForCellSixP.grid(row=5, column=1)
+            gamemodes.assets.turnCounter.playerOne += 1
+            computerTurn()
+        
+    def fieldSevenPlayer():
+        if gamemodes.assets.cells.cell7 == " ":
+            gamemodes.assets.cells.cell7 = "O"
+            buttonForCellSeven.grid_forget()
+            buttonForCellSevenP.grid(row=5, column=3)
+            gamemodes.assets.turnCounter.playerOne += 1
+            computerTurn()
+        
+    def fieldEightPlayer():
+        if gamemodes.assets.cells.cell8 == " ":
+            gamemodes.assets.cells.cell8 = "O"
+            buttonForCellEight.grid_forget()
+            buttonForCellEightP.grid(row=5, column=5)
+            gamemodes.assets.turnCounter.playerOne += 1
+            computerTurn()
+
+    def fieldZeroComputer():
+        if gamemodes.assets.cells.cell0 == " ":
+            gamemodes.assets.cells.cell0 = "X"
+            buttonForCellZero.grid_forget()
+            buttonForCellZeroCom.grid(row=1, column=1)
+            gamemodes.assets.turnCounter.playerTwo += 1
+            checkState()
+
+        else:
+            computerTurn()
+            
+    def fieldOneComputer():
+        if gamemodes.assets.cells.cell1 == " ":
+            gamemodes.assets.cells.cell1 = "X"
+            buttonForCellOne.grid_forget()
+            buttonForCellOneCom.grid(row=1, column=3)
+            gamemodes.assets.turnCounter.playerTwo += 1
+            checkState()
+
+        else:
+            computerTurn()
+            
+    def fieldTwoComputer():
+        if gamemodes.assets.cells.cell2 == " ":
+            gamemodes.assets.cells.cell2 = "X"
+            buttonForCellTwo.grid_forget()
+            buttonForCellTwoCom.grid(row=1, column=5)
+            gamemodes.assets.turnCounter.playerTwo += 1
+            checkState()
+
+        else:
+            computerTurn()
+            
+    def fieldThreeComputer():
+        if gamemodes.assets.cells.cell3 == " ":
+            gamemodes.assets.cells.cell3 = "X"
+            buttonForCellThree.grid_forget()
+            buttonForCellThreeCom.grid(row=3, column=1)
+            gamemodes.assets.turnCounter.playerTwo += 1
+            checkState()
+
+        else:
+            computerTurn()
+        
+    def fieldFourComputer():
+        if gamemodes.assets.cells.cell4 == " ":
+            gamemodes.assets.cells.cell4 = "X"
+            buttonForCellFour.grid_forget()
+            buttonForCellFourCom.grid(row=3, column=3)
+            gamemodes.assets.turnCounter.playerTwo += 1
+            checkState()
+
+        else:
+            computerTurn()
+            
+    def fieldFiveComputer():
+        if gamemodes.assets.cells.cell5 == " ":
+            gamemodes.assets.cells.cell5 = "X"
+            buttonForCellFive.grid_forget()
+            buttonForCellFiveCom.grid(row=3, column=5)
+            gamemodes.assets.turnCounter.playerTwo += 1
+            checkState()
+
+        else:
+            computerTurn()
+            
+    def fieldSixComputer():
+        if gamemodes.assets.cells.cell6 == " ":
+            gamemodes.assets.cells.cell6 = "X"
+            buttonForCellSix.grid_forget()
+            buttonForCellSixCom.grid(row=5, column=1)
+            gamemodes.assets.turnCounter.playerTwo += 1
+            checkState()
+            
+        else:
+            computerTurn()
+            
+    def fieldSevenComputer():
+        if gamemodes.assets.cells.cell7 == " ":
+            gamemodes.assets.cells.cell7 = "X"
+            buttonForCellSeven.grid_forget()
+            buttonForCellSevenCom.grid(row=5, column=3)
+            gamemodes.assets.turnCounter.playerTwo += 1
+            checkState()
+            
+        else:
+            computerTurn()
+            
+    def fieldEightComputer():
+        if gamemodes.assets.cells.cell8 == " ":
+            gamemodes.assets.cells.cell8 = "X"
+            buttonForCellEight.grid_forget()
+            buttonForCellEightCom.grid(row=5, column=5)
+            gamemodes.assets.turnCounter.playerTwo += 1
+            checkState()
+            
+        else:
+            computerTurn()
+        
+    def computerTurn():
+        checkState()
+        if gamemodes.assets.turnCounter.playerOne != 0 and gamemodes.assets.turnCounter.playerOne > gamemodes.assets.turnCounter.playerTwo:
+            computer = randint(0, 8)
+            if computer == 0:
+                fieldZeroComputer()
+           
+            elif computer == 1:
+                fieldOneComputer()
+            
+            elif computer == 2:
+                fieldTwoComputer()
+            
+            elif computer == 3:
+                fieldThreeComputer()
+            
+            elif computer == 4:
+                fieldFourComputer()
+            
+            elif computer == 5:
+                fieldFiveComputer()
+            
+            elif computer == 6:
+                fieldSixComputer()
+            
+            elif computer == 7:
+                fieldSevenComputer()
+            
+            elif computer == 8:
+                fieldEightComputer()
+                
+    gamepvcom = Toplevel()
+    gamepvcom.geometry()
+    gamepvcom.resizable(width=0, height=0)
+        
+    gamepvcom.title(ticTacPyApp.pvcomTitleBar)
+
+    # Placeholder between the left of the window and column 0
+    placeholder0 = Label(gamepvcom, text="", font=("Arial", 2))
+    placeholder0.grid(row=1, column=0)
+
+    # Placeholder between the high of the window and row 0
+    placeholder1 = Label(gamepvcom, text="", font=("Arial", 2))
+    placeholder1.grid(row=0)
+
+    # For cell 0 
+    buttonForCellZero = Button(gamepvcom, text=" ", width=16, height=4, font=("Arial", 9))
+    buttonForCellZero["command"] = fieldZeroPlayer
+    buttonForCellZero.grid(row=1, column=1)
+
+    buttonForCellZeroP = Button(gamepvcom, text="O", width=16, height=4, font=("Arial", 9))
+    buttonForCellZeroP["command"] = fieldFilled
+
+    buttonForCellZeroCom = Button(gamepvcom, text="X", width=16, height=4, font=("Arial", 9))
+    buttonForCellZeroCom["command"] = fieldFilled
+
+    # Placeholder between column 0 and 1
+    placeholder2 = Label(gamepvcom, text="", font=("Arial", 2))
+    placeholder2.grid(row=1, column=2)
+
+    # For cell 1 
+    buttonForCellOne = Button(gamepvcom, text=" ", width=16, height=4, font=("Arial", 9))
+    buttonForCellOne["command"] = fieldOnePlayer
+    buttonForCellOne.grid(row=1, column=3)
+
+    buttonForCellOneP = Button(gamepvcom, text="O", width=16, height=4, font=("Arial", 9))
+    buttonForCellOneP["command"] = fieldFilled
+
+    buttonForCellOneCom = Button(gamepvcom, text="X", width=16, height=4, font=("Arial", 9))
+    buttonForCellOneCom["command"] = fieldFilled
+
+    # Placeholder between column 1 and 2
+    placeholder3 = Label(gamepvcom, text="", font=("Arial", 2))
+    placeholder3.grid(row=1, column=4)
+
+    # For cell 2 
+    buttonForCellTwo = Button(gamepvcom, text=" ", width=16, height=4, font=("Arial", 9))
+    buttonForCellTwo["command"] = fieldTwoPlayer
+    buttonForCellTwo.grid(row=1, column=5)
+
+    buttonForCellTwoP = Button(gamepvcom, text="O", width=16, height=4, font=("Arial", 9))
+    buttonForCellTwoP["command"] = fieldFilled
+
+    buttonForCellTwoCom = Button(gamepvcom, text="X", width=16, height=4, font=("Arial", 9))
+    buttonForCellTwoCom["command"] = fieldFilled
+
+    # Placeholder between column 2 and the right of the window
+    placeholder4 = Label(gamepvcom, text="", font=("Arial", 2))
+    placeholder4.grid(row=1, column=6)
+
+    # Placeholder between row 0 and 1
+    placeholder5 = Label(gamepvcom, text="", font=("Arial", 2))
+    placeholder5.grid(row=2, column=2)
+
+    # For cell 3 
+    buttonForCellThree = Button(gamepvcom, text=" ", width=16, height=4, font=("Arial", 9))
+    buttonForCellThree["command"] = fieldThreePlayer
+    buttonForCellThree.grid(row=3, column=1)
+
+    buttonForCellThreeP = Button(gamepvcom, text="O", width=16, height=4, font=("Arial", 9))
+    buttonForCellThreeP["command"] = fieldFilled
+
+    buttonForCellThreeCom = Button(gamepvcom, text="X", width=16, height=4, font=("Arial", 9))
+    buttonForCellThreeCom["command"] = fieldFilled
+
+    # For cell 4 
+    buttonForCellFour = Button(gamepvcom, text=" ", width=16, height=4, font=("Arial", 9))
+    buttonForCellFour["command"] = fieldFourPlayer
+    buttonForCellFour.grid(row=3, column=3)
+
+    buttonForCellFourP = Button(gamepvcom, text="O", width=16, height=4, font=("Arial", 9))
+    buttonForCellFourP["command"] = fieldFilled
+
+    buttonForCellFourCom = Button(gamepvcom, text="X", width=16, height=4, font=("Arial", 9))
+    buttonForCellFourCom["command"] = fieldFilled
+
+    # For cell 5
+    buttonForCellFive = Button(gamepvcom, text=" ", width=16, height=4, font=("Arial", 9))
+    buttonForCellFive["command"] = fieldFivePlayer
+    buttonForCellFive.grid(row=3, column=5)
+
+    buttonForCellFiveP = Button(gamepvcom, text="O", width=16, height=4, font=("Arial", 9))
+    buttonForCellFiveP["command"] = fieldFilled
+
+    buttonForCellFiveCom = Button(gamepvcom, text="X", width=16, height=4, font=("Arial", 9))
+    buttonForCellFiveCom["command"] = fieldFilled
+
+    # Placeholder between row 1 and 2
+    placeholder6 = Label(gamepvcom, text="", font=("Arial", 2))
+    placeholder6.grid(row=4, column=2)
+
+    # For cell 6
+    buttonForCellSix = Button(gamepvcom, text=" ", width=16, height=4, font=("Arial", 9))
+    buttonForCellSix["command"] = fieldSixPlayer
+    buttonForCellSix.grid(row=5, column=1)
+
+    buttonForCellSixP = Button(gamepvcom, text="O", width=16, height=4, font=("Arial", 9))
+    buttonForCellSixP["command"] = fieldFilled
+
+    buttonForCellSixCom = Button(gamepvcom, text="X", width=16, height=4, font=("Arial", 9))
+    buttonForCellSixCom["command"] = fieldFilled
+
+    # For cell 7
+    buttonForCellSeven = Button(gamepvcom, text=" ", width=16, height=4, font=("Arial", 9))
+    buttonForCellSeven["command"] = fieldSevenPlayer
+    buttonForCellSeven.grid(row=5, column=3)
+
+    buttonForCellSevenP = Button(gamepvcom, text="O", width=16, height=4, font=("Arial", 9))
+    buttonForCellSevenP["command"] = fieldFilled
+
+    buttonForCellSevenCom = Button(gamepvcom, text="X", width=16, height=4, font=("Arial", 9))
+    buttonForCellSevenCom["command"] = fieldFilled
+
+    # For cell 8
+    buttonForCellEight = Button(gamepvcom, text=" ", width=16, height=4, font=("Arial", 9))
+    buttonForCellEight["command"] = fieldEightPlayer
+    buttonForCellEight.grid(row=5, column=5)
+
+    buttonForCellEightP = Button(gamepvcom, text="O", width=16, height=4, font=("Arial", 9))
+    buttonForCellEightP["command"] = fieldFilled
+
+    buttonForCellEightCom = Button(gamepvcom, text="X", width=16, height=4, font=("Arial", 9))
+    buttonForCellEightCom["command"] = fieldFilled
+
+    # Placeholder between row 2 and the low of the window
+    placeholder8 = Label(gamepvcom, text="", font=("Arial", 2))
+    placeholder8.grid(row=6, column=2)
