@@ -1,1 +1,1 @@
-# tic-tac-py-tkinter-edition
+# Tic Tac Py - Tkinter Edition
