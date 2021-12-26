@@ -1,9 +1,10 @@
 Tic Tac Py - Tkinter Edition, Version 0.8 Beta
-- Date of completion: 19th December, 2021
+- Date of completion: 26th December, 2021
 - The game is an alpha no more - it's an open beta now. Released under the BSD license 3, which is also mentioned in the About window.
 - A new edition of this game is planned. As such, this one has been given the additional name "Tkinter Edition".
-- Binaries for Windows are now available, but users of Avira will have to turn off the antivirus or get the game out of quarantine. Sorry for the inconvinience.
+- Binaries for Windows and Linux are now available, but users of Avira will have to turn off the antivirus or get the game out of quarantine. Sorry for the inconvinience.
 - The language settings have been (hopefully) improved.
+- The system requirements have been updated. You definetely need a 64-bit processor to play the pre-made binaries.
 
 Tic Tac Py, Version 0.7 Alpha
 - Date of completion: 28th November, 2021
