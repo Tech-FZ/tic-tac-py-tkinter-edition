@@ -6,7 +6,7 @@ from gamemodes.settings import *
 
 class App:
     def __init__(self):
-        self.version = "0.8"
+        self.version = "0.8.1"
         self.gamemode = 0
         self.lang = "not defined"
 

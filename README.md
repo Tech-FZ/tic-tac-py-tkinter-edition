@@ -4,7 +4,7 @@ This is Tic Tac Py - Tkinter Edition which is currently an open beta.
 
 # Installing the software
 
-Just download the game from the releases, extract the archive and have fun. Those using Avira may need to get the game from quarantine. macOS users need to install Python and download the source code due to me not having a Mac. :( Linux users also have to download the source, but usually only need to install the tkinter module.
+Just download the game from the releases, extract the archive and have fun. Those using Avira may need to get the game from quarantine. macOS users need to install Python and download the source code due to me not having a Mac. :( Linux users however can download the binaries for their machine, but shouldn't have the problem Windows users possibly have.
 
 # Building the software for Windows
 
@@ -24,9 +24,9 @@ You will need a machine where Linux and Python are installed.
 1. Download the source code.
 2. Extract the archive.
 3. Open a command prompt in the directory.
-4. Type in the following command: pyinstaller --onefile main.py
-5. Copy the doc and gamemodes folders into the directory where the binary is.
-6. Test the result.
+4. Type in the following command: pip install tk
+5. Type in the following command: pyinstaller --onefile main.py
+6. Copy the doc and gamemodes folders into the directory where the binary is.
 
 # Contribute
 

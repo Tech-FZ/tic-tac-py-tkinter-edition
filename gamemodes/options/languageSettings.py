@@ -43,7 +43,7 @@ def langSettingMenu(ticTacPyApp):
         restartAdvise.title()
         restartAdvise.resizable(width=0, height=0)
 
-        restartLabel = Label(restartAdvise, text=ticTacPyApp.restartText)
+        restartLabel = Label(restartAdvise, text=ticTacPyApp.restartText, font=("Arial", 16))
         restartLabel.grid(row=0, column=0)
 
         button = Button(restartAdvise, text=ticTacPyApp.okay, font=("Arial", 14))

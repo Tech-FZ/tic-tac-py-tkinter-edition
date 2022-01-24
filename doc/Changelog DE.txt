@@ -1,10 +1,14 @@
+Tic Tac Py - Tkinter Edition, Version 0.8.1 Beta
+- Abgeschlossen am 24.01.2022
+- Das Neustart-Fenster wurde repariert. Bedankt euch später bei mir. :)
+- Kannst du japanisch? Dann habe ich gute Nachrichten! Ich habe es nämlich möglich gemacht, ein japanisches Sprachpaket zu implementieren.
+
 Tic Tac Py - Tkinter Edition, Version 0.8 Beta
-- Abgeschlossen am 26.12.2021
+- Abgeschlossen am 19.12.2021
 - Das Spiel ist nicht länger in der Alpha, sondern in der Open Beta. Veröffentlicht unter der BSD-Lizenz in der Version 3, welches auch im Über-Fenster gelesen werden kann.
 - Ich plane eine neue Fassung des Spiels, daher wurde dieser Fassung der Zusatz "Tkinter Edition" gegeben.
-- Es gibt nun Binaries für Windows und Linux, leider müssen Avira-Nutzer ihren Antivirus jedoch abschalten oder das Spiel aus der Quarantäne holen. Ich entschuldige mich für die Unannehmlichkeiten.
+- Es gibt nun Binaries für Windows, leider müssen Avira-Nutzer ihren Antivirus jedoch abschalten oder das Spiel aus der Quarantäne holen. Ich entschuldige mich für die Unannehmlichkeiten.
 - Die Spracheinstellungen wurden (hoffentlich) verbessert.
-- Die Systemanforderungen wurden aktualisiert. Sie brauchen definitiv einen 64-Bit-Prozessor, um die vorbereiteten Binaries auszuführen.
 
 Tic Tac Py, Version 0.7 Alpha
 - Abgeschlossen am 28.11.2021
