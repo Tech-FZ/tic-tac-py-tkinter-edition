@@ -2,7 +2,7 @@ def setLanguage(ticTacPyApp):
     ticTacPyApp.lang = "en_US"
 
     # Text for main
-    ticTacPyApp.alphaWarning = "WARNING: This game is currently an beta and as such, issues may occur."
+    ticTacPyApp.alphaWarning = "WARNING: This game is currently a beta and as such, issues may occur."
     ticTacPyApp.welcome = "Welcome to Tic Tac Py!"
     ticTacPyApp.gamemodeQuestion = "Which gamemode do you wanna play?"
     ticTacPyApp.pvpText = "Player vs. Player"
