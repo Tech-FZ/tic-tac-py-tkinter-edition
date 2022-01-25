@@ -1,7 +1,8 @@
 Tic Tac Py - Tkinter Edition, Version 0.8.1 Beta
-- Date of completion: 24th January, 2022
+- Date of completion: 25th January, 2022
 - The restart window has been fixed. Thank me later. :)
 - Do you know Japanese? Then I have good news! I made it possible to implement a Japanese language pack.
+- A grammar mistake in the English language has been corrected.
 
 Tic Tac Py - Tkinter Edition, Version 0.8 Beta
 - Date of completion: 19th December, 2021
