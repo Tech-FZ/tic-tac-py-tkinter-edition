@@ -9,7 +9,12 @@ def aboutBox(ticTacPyApp):
     aboutApp.resizable(width=0, height=0)
     aboutApp.title(ticTacPyApp.aboutTitleBar)
 
-    ttp = Label(aboutApp, text=f"Tic Tac Py - Tkinter Edition, Version {ticTacPyApp.version}", font=("Arial", 16))
+    ttp = Label(
+        aboutApp,
+        text=f"Tic Tac Py - Tkinter Edition, Version {ticTacPyApp.majorVer}.{ticTacPyApp.minorVer1}.{ticTacPyApp.minorVer2}",
+        font=("Arial", 16)
+    )
+    
     ttp.pack()
 
     licenseLabel = Label(aboutApp, text="BSD 3-Clause License\n\nCopyright (c) 2021-2022, Tech-FZ, (c) 2001-2022 Python Software Foundation\nAll rights reserved."

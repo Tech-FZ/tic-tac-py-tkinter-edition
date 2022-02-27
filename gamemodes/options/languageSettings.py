@@ -44,7 +44,7 @@ def langSettingMenu(ticTacPyApp):
         restartAdvise.resizable(width=0, height=0)
 
         restartLabel = Label(restartAdvise, text=ticTacPyApp.restartText, font=("Arial", 16))
-        restartLabel.grid(row=0, column=0)
+        restartLabel.grid(row=0, column=0, columnspan=3)
 
         button = Button(restartAdvise, text=ticTacPyApp.okay, font=("Arial", 14))
         button["command"] = languageSettingsMenu.destroy

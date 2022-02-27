@@ -24,7 +24,7 @@ You will need a machine where Linux and Python are installed.
 1. Download the source code.
 2. Extract the archive.
 3. Open a command prompt in the directory.
-4. Type in the following command: pip install tk
+4. Install the tkinter module for Python. The command depends on your distribution.
 5. Type in the following command: pyinstaller --onefile main.py
 6. Copy the doc and gamemodes folders into the directory where the binary is.
 

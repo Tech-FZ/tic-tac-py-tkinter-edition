@@ -6,7 +6,11 @@ from gamemodes.settings import *
 
 class App:
     def __init__(self):
-        self.version = "0.8.1"
+        # Version definition system for the upcoming updater
+        self.majorVer = 0
+        self.minorVer1 = 8
+        self.minorVer2 = 2
+
         self.gamemode = 0
         self.lang = "not defined"
 
@@ -84,7 +88,7 @@ class App:
     
 ticTacPyApp = App()
 
-print(f"Tic Tac Py, Tkinter Edition, Version {ticTacPyApp.version}")
+print(f"Tic Tac Py, Tkinter Edition, Version {ticTacPyApp.majorVer}.{ticTacPyApp.minorVer1}.{ticTacPyApp.minorVer2}")
 
 root = Tk()
 

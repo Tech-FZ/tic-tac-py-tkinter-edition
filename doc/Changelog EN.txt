@@ -1,3 +1,11 @@
+Tic Tac Py - Tkinter Edition, Version 0.8.2 Beta
+- Date of completion: 26th February, 2022
+- The restart window has been adapted entirely now. You're welcome. ;)
+- The version determination has been optimized for an update checker.
+ - However, this does NOT mean that this feature is already implemented. This is not the case yet!
+- Also, the code for the gamemodes has been optimized so gamemodes with bigger boards can be built on that.
+- Readme.md has been corrected (again).
+
 Tic Tac Py - Tkinter Edition, Version 0.8.1 Beta
 - Date of completion: 25th January, 2022
 - The restart window has been fixed. Thank me later. :)

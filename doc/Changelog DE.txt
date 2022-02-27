@@ -1,3 +1,11 @@
+Tic Tac Py - Tkinter Edition, Version 0.8.2 Beta
+- Abgeschlossen am 26.02.2022
+- Das Neustart-Fenster wurde nun komplett angepasst. Gern geschehen. ;)
+- Für das kommende Beta 2-Update wurde die Versionsangabe für eine Update-Überprüfung optimiert.
+ - Das heißt jedoch NICHT, dass diese Update-Überprüfung bereits implementiert ist. Das ist hier nicht der Fall!
+- Auch wurde der Code der Spielmodi so optimiert, dass sie als Basis von Spielmodi mit größeren Spielfeldern dienen kann.
+- Readme.md wurde korrigiert (mal wieder).
+
 Tic Tac Py - Tkinter Edition, Version 0.8.1 Beta
 - Abgeschlossen am 25.01.2022
 - Das Neustart-Fenster wurde repariert. Bedankt euch später bei mir. :)

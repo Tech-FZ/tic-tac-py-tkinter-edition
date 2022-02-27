@@ -1,10 +1,11 @@
-import gamemodes.assets.cells
 import gamemodes.assets.turnCounter
 from tkinter import *
 
 # Player is O, Computer is X.
 
 def playerVsPlayer(ticTacPyApp):
+    field = [[" ", " ", " "], [" ", " ", " "], [" ", " ", " "]]
+
     def fieldFilled():
         notice = Toplevel(gamepvcom)
         notice.geometry()
@@ -104,28 +105,28 @@ def playerVsPlayer(ticTacPyApp):
     def doneWithPlaying():
         gamepvcom.destroy()
 
-        # Resetting the cells
-        gamemodes.assets.cells.cell0 = " "
-        gamemodes.assets.cells.cell1 = " "
-        gamemodes.assets.cells.cell2 = " "
-        gamemodes.assets.cells.cell3 = " "
-        gamemodes.assets.cells.cell4 = " "
-        gamemodes.assets.cells.cell5 = " "
-        gamemodes.assets.cells.cell6 = " "
-        gamemodes.assets.cells.cell7 = " "
-        gamemodes.assets.cells.cell8 = " "
+        # New code
+        field[0][0] = " "
+        field[0][1] = " "
+        field[0][2] = " "
+        field[1][0] = " "
+        field[1][1] = " "
+        field[1][2] = " "
+        field[2][0] = " "
+        field[2][1] = " "
+        field[2][2] = " "
     
     def wannaPlayMore():
-        # Resetting the cells
-        gamemodes.assets.cells.cell0 = " "
-        gamemodes.assets.cells.cell1 = " "
-        gamemodes.assets.cells.cell2 = " "
-        gamemodes.assets.cells.cell3 = " "
-        gamemodes.assets.cells.cell4 = " "
-        gamemodes.assets.cells.cell5 = " "
-        gamemodes.assets.cells.cell6 = " "
-        gamemodes.assets.cells.cell7 = " "
-        gamemodes.assets.cells.cell8 = " "
+        # New code
+        field[0][0] = " "
+        field[0][1] = " "
+        field[0][2] = " "
+        field[1][0] = " "
+        field[1][1] = " "
+        field[1][2] = " "
+        field[2][0] = " "
+        field[2][1] = " "
+        field[2][2] = " "
 
         # Hiding player 1 marks
         buttonForCellZeroP1.grid_forget()
@@ -170,79 +171,79 @@ def playerVsPlayer(ticTacPyApp):
     def checkState():
         # Checking rows
 
-        if gamemodes.assets.cells.cell0 == gamemodes.assets.cells.cell1 == gamemodes.assets.cells.cell2:
-            if gamemodes.assets.cells.cell1 == "O":
+        if field[0][0] == field[0][1] == field[0][2]:
+            if field[0][0] == "O":
                 playerOneWon()
 
-            elif gamemodes.assets.cells.cell1 == "X":
+            elif field[0][0] == "X":
                 playerOneLost()
         
-        elif gamemodes.assets.cells.cell3 == gamemodes.assets.cells.cell4 == gamemodes.assets.cells.cell5:
-            if gamemodes.assets.cells.cell3 == "O":
+        elif field[1][0] == field[1][1] == field[1][2]:
+            if field[1][0] == "O":
                 playerOneWon()
 
-            elif gamemodes.assets.cells.cell3 == "X":
+            elif field[1][0] == "X":
                 playerOneLost()
                     
-        elif gamemodes.assets.cells.cell6 == gamemodes.assets.cells.cell7 == gamemodes.assets.cells.cell8:
-            if gamemodes.assets.cells.cell6 == "O":
+        elif field[2][0] == field[2][1] == field[2][2]:
+            if field[2][0] == "O":
                 playerOneWon()
 
-            elif gamemodes.assets.cells.cell6 == "X":
+            elif field[2][0] == "X":
                 playerOneLost()
                     
         # Checking columns
 
-        elif gamemodes.assets.cells.cell3 == gamemodes.assets.cells.cell0 == gamemodes.assets.cells.cell6:
-            if gamemodes.assets.cells.cell3 == "O":
+        elif field[0][0] == field[1][0] == field[2][0]:
+            if field[0][0] == "O":
                 playerOneWon()
 
-            elif gamemodes.assets.cells.cell3 == "X":
+            elif field[0][0] == "X":
                 playerOneLost()
                     
-        elif gamemodes.assets.cells.cell1 == gamemodes.assets.cells.cell4 == gamemodes.assets.cells.cell7:
-            if gamemodes.assets.cells.cell1 == "O":
+        elif field[0][1] == field[1][1] == field[2][1]:
+            if field[0][1] == "O":
                 playerOneWon()
 
-            elif gamemodes.assets.cells.cell1 == "X":
+            elif field[0][1] == "X":
                 playerOneLost()
                     
-        elif gamemodes.assets.cells.cell2 == gamemodes.assets.cells.cell8 == gamemodes.assets.cells.cell5:
-            if gamemodes.assets.cells.cell2 == "O":
+        elif field[0][2] == field[1][2] == field[2][2]:
+            if field[0][2] == "O":
                 playerOneWon()
 
-            elif gamemodes.assets.cells.cell2 == "X":
+            elif field[0][2] == "X":
                 playerOneLost()
                     
         # Checking diagonals (Sorry for my bad English, I primarily speak German. :( )
 
-        elif gamemodes.assets.cells.cell0 == gamemodes.assets.cells.cell4 == gamemodes.assets.cells.cell8:
-            if gamemodes.assets.cells.cell0 == "O":
+        elif field[0][0] == field[1][1] == field[2][2]:
+            if field[0][0] == "O":
                 playerOneWon()
 
-            elif gamemodes.assets.cells.cell0 == "X":
+            elif field[0][0] == "X":
                 playerOneLost()
                     
-        elif gamemodes.assets.cells.cell2 == gamemodes.assets.cells.cell4 == gamemodes.assets.cells.cell6:
-            if gamemodes.assets.cells.cell2 == "O":
+        elif field[0][2] == field[1][1] == field[2][0]:
+            if field[0][2] == "O":
                 playerOneWon()
 
-            elif gamemodes.assets.cells.cell2 == "X":
+            elif field[0][2] == "X":
                 playerOneLost()
                     
         # Checking if full
 
-        elif gamemodes.assets.cells.cell0 != " " and gamemodes.assets.cells.cell1 != " " and gamemodes.assets.cells.cell2 != " " and gamemodes.assets.cells.cell3 != " ":
-            if gamemodes.assets.cells.cell4 != " " and gamemodes.assets.cells.cell5 != " " and gamemodes.assets.cells.cell6 != " ":
-                if gamemodes.assets.cells.cell7 != " " and gamemodes.assets.cells.cell8 != " ":
+        elif field[0][0] != " " and field[0][1] != " " and field[0][2] != " " and field[1][0] != " ":
+            if field[1][1] != " " and field[1][2] != " " and field[2][0] != " ":
+                if field[2][1] != " " and field[2][2] != " ":
                     nobodyWon()
 
     # Here is the real game
 
     def fieldZeroPlayer():
-        if gamemodes.assets.cells.cell0 == " ":
+        if field[0][0] == " ":
             if gamemodes.assets.turnCounter.playerOne == gamemodes.assets.turnCounter.playerTwo:
-                gamemodes.assets.cells.cell0 = "O"
+                field[0][0] = "O"
                 buttonForCellZero.grid_forget()
                 buttonForCellZeroP1.grid(row=1, column=1)
                 gamemodes.assets.turnCounter.playerOne += 1
@@ -250,7 +251,7 @@ def playerVsPlayer(ticTacPyApp):
                 playerTwoTurnText.grid(row=0, column=0, columnspan=6)
             
             elif gamemodes.assets.turnCounter.playerOne > gamemodes.assets.turnCounter.playerTwo:
-                gamemodes.assets.cells.cell0 = "X"
+                field[0][0] = "X"
                 buttonForCellZero.grid_forget()
                 buttonForCellZeroP2.grid(row=1, column=1)
                 gamemodes.assets.turnCounter.playerTwo += 1
@@ -260,9 +261,9 @@ def playerVsPlayer(ticTacPyApp):
             checkState()
             
     def fieldOnePlayer():
-        if gamemodes.assets.cells.cell1 == " ":
+        if field[0][1] == " ":
             if gamemodes.assets.turnCounter.playerOne == gamemodes.assets.turnCounter.playerTwo:
-                gamemodes.assets.cells.cell1 = "O"
+                field[0][1] = "O"
                 buttonForCellOne.grid_forget()
                 buttonForCellOneP1.grid(row=1, column=3)
                 gamemodes.assets.turnCounter.playerOne += 1
@@ -270,7 +271,7 @@ def playerVsPlayer(ticTacPyApp):
                 playerTwoTurnText.grid(row=0, column=0, columnspan=6)
             
             elif gamemodes.assets.turnCounter.playerOne > gamemodes.assets.turnCounter.playerTwo:
-                gamemodes.assets.cells.cell1 = "X"
+                field[0][1] = "X"
                 buttonForCellOne.grid_forget()
                 buttonForCellOneP2.grid(row=1, column=3)
                 gamemodes.assets.turnCounter.playerTwo += 1
@@ -280,9 +281,9 @@ def playerVsPlayer(ticTacPyApp):
             checkState()
             
     def fieldTwoPlayer():
-        if gamemodes.assets.cells.cell2 == " ":
+        if field[0][2] == " ":
             if gamemodes.assets.turnCounter.playerOne == gamemodes.assets.turnCounter.playerTwo:
-                gamemodes.assets.cells.cell2 = "O"
+                field[0][2] = "O"
                 buttonForCellTwo.grid_forget()
                 buttonForCellTwoP1.grid(row=1, column=5)
                 gamemodes.assets.turnCounter.playerOne += 1
@@ -290,7 +291,7 @@ def playerVsPlayer(ticTacPyApp):
                 playerTwoTurnText.grid(row=0, column=0, columnspan=6)
             
             elif gamemodes.assets.turnCounter.playerOne > gamemodes.assets.turnCounter.playerTwo:
-                gamemodes.assets.cells.cell2 = "X"
+                field[0][2] = "X"
                 buttonForCellTwo.grid_forget()
                 buttonForCellTwoP2.grid(row=1, column=5)
                 gamemodes.assets.turnCounter.playerTwo += 1
@@ -300,9 +301,9 @@ def playerVsPlayer(ticTacPyApp):
             checkState()
         
     def fieldThreePlayer():
-        if gamemodes.assets.cells.cell3 == " ":
+        if field[1][0] == " ":
             if gamemodes.assets.turnCounter.playerOne == gamemodes.assets.turnCounter.playerTwo:
-                gamemodes.assets.cells.cell3 = "O"
+                field[1][0] = "O"
                 buttonForCellThree.grid_forget()
                 buttonForCellThreeP1.grid(row=3, column=1)
                 gamemodes.assets.turnCounter.playerOne += 1
@@ -310,7 +311,7 @@ def playerVsPlayer(ticTacPyApp):
                 playerTwoTurnText.grid(row=0, column=0, columnspan=6)
             
             elif gamemodes.assets.turnCounter.playerOne > gamemodes.assets.turnCounter.playerTwo:
-                gamemodes.assets.cells.cell3 = "X"
+                field[1][0] = "X"
                 buttonForCellThree.grid_forget()
                 buttonForCellThreeP2.grid(row=3, column=1)
                 gamemodes.assets.turnCounter.playerTwo += 1
@@ -320,9 +321,9 @@ def playerVsPlayer(ticTacPyApp):
             checkState()
         
     def fieldFourPlayer():
-        if gamemodes.assets.cells.cell4 == " ":
+        if field[1][1] == " ":
             if gamemodes.assets.turnCounter.playerOne == gamemodes.assets.turnCounter.playerTwo:
-                gamemodes.assets.cells.cell4 = "O"
+                field[1][1] = "O"
                 buttonForCellFour.grid_forget()
                 buttonForCellFourP1.grid(row=3, column=3)
                 gamemodes.assets.turnCounter.playerOne += 1
@@ -330,7 +331,7 @@ def playerVsPlayer(ticTacPyApp):
                 playerTwoTurnText.grid(row=0, column=0, columnspan=6)
             
             elif gamemodes.assets.turnCounter.playerOne > gamemodes.assets.turnCounter.playerTwo:
-                gamemodes.assets.cells.cell4 = "X"
+                field[1][1] = "X"
                 buttonForCellFour.grid_forget()
                 buttonForCellFourP2.grid(row=3, column=3)
                 gamemodes.assets.turnCounter.playerTwo += 1
@@ -340,9 +341,9 @@ def playerVsPlayer(ticTacPyApp):
             checkState()
         
     def fieldFivePlayer():
-        if gamemodes.assets.cells.cell5 == " ":
+        if field[1][2] == " ":
             if gamemodes.assets.turnCounter.playerOne == gamemodes.assets.turnCounter.playerTwo:
-                gamemodes.assets.cells.cell5 = "O"
+                field[1][2] = "O"
                 buttonForCellFive.grid_forget()
                 buttonForCellFiveP1.grid(row=3, column=5)
                 gamemodes.assets.turnCounter.playerOne += 1
@@ -350,7 +351,7 @@ def playerVsPlayer(ticTacPyApp):
                 playerTwoTurnText.grid(row=0, column=0, columnspan=6)
             
             elif gamemodes.assets.turnCounter.playerOne > gamemodes.assets.turnCounter.playerTwo:
-                gamemodes.assets.cells.cell5 = "X"
+                field[1][2] = "X"
                 buttonForCellFive.grid_forget()
                 buttonForCellFiveP2.grid(row=3, column=5)
                 gamemodes.assets.turnCounter.playerTwo += 1
@@ -360,9 +361,9 @@ def playerVsPlayer(ticTacPyApp):
             checkState()
         
     def fieldSixPlayer():
-        if gamemodes.assets.cells.cell6 == " ":
+        if field[2][0] == " ":
             if gamemodes.assets.turnCounter.playerOne == gamemodes.assets.turnCounter.playerTwo:
-                gamemodes.assets.cells.cell6 = "O"
+                field[2][0] = "O"
                 buttonForCellSix.grid_forget()
                 buttonForCellSixP1.grid(row=5, column=1)
                 gamemodes.assets.turnCounter.playerOne += 1
@@ -370,7 +371,7 @@ def playerVsPlayer(ticTacPyApp):
                 playerTwoTurnText.grid(row=0, column=0, columnspan=6)
             
             elif gamemodes.assets.turnCounter.playerOne > gamemodes.assets.turnCounter.playerTwo:
-                gamemodes.assets.cells.cell6 = "X"
+                field[2][0] = "X"
                 buttonForCellSix.grid_forget()
                 buttonForCellSixP2.grid(row=5, column=1)
                 gamemodes.assets.turnCounter.playerTwo += 1
@@ -380,9 +381,9 @@ def playerVsPlayer(ticTacPyApp):
             checkState()
         
     def fieldSevenPlayer():
-        if gamemodes.assets.cells.cell7 == " ":
+        if field[2][1] == " ":
             if gamemodes.assets.turnCounter.playerOne == gamemodes.assets.turnCounter.playerTwo:
-                gamemodes.assets.cells.cell7 = "O"
+                field[2][1] = "O"
                 buttonForCellSeven.grid_forget()
                 buttonForCellSevenP1.grid(row=5, column=3)
                 gamemodes.assets.turnCounter.playerOne += 1
@@ -390,7 +391,7 @@ def playerVsPlayer(ticTacPyApp):
                 playerTwoTurnText.grid(row=0, column=0, columnspan=6)
             
             elif gamemodes.assets.turnCounter.playerOne > gamemodes.assets.turnCounter.playerTwo:
-                gamemodes.assets.cells.cell7 = "X"
+                field[2][1] = "X"
                 buttonForCellSeven.grid_forget()
                 buttonForCellSevenP2.grid(row=5, column=3)
                 gamemodes.assets.turnCounter.playerTwo += 1
@@ -400,9 +401,9 @@ def playerVsPlayer(ticTacPyApp):
             checkState()
         
     def fieldEightPlayer():
-        if gamemodes.assets.cells.cell8 == " ":
+        if field[2][2] == " ":
             if gamemodes.assets.turnCounter.playerOne == gamemodes.assets.turnCounter.playerTwo:
-                gamemodes.assets.cells.cell8 = "O"
+                field[2][2] = "O"
                 buttonForCellEight.grid_forget()
                 buttonForCellEightP1.grid(row=5, column=5)
                 gamemodes.assets.turnCounter.playerOne += 1
@@ -410,7 +411,7 @@ def playerVsPlayer(ticTacPyApp):
                 playerTwoTurnText.grid(row=0, column=0, columnspan=6)
             
             elif gamemodes.assets.turnCounter.playerOne > gamemodes.assets.turnCounter.playerTwo:
-                gamemodes.assets.cells.cell8 = "X"
+                field[2][2] = "X"
                 buttonForCellEight.grid_forget()
                 buttonForCellEightP2.grid(row=5, column=5)
                 gamemodes.assets.turnCounter.playerTwo += 1
