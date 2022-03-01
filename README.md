@@ -31,3 +31,4 @@ You will need a machine where Linux and Python are installed.
 # Contribute
 
 Good at making icons? Wanna help translate the game so more people can play? Any other ideas? You're always welcome to contribute.
+NEW RULE: Before you can do that, you must comment on an issue or - if not yet available - open a new one stating that you will fix or add it yourself.
