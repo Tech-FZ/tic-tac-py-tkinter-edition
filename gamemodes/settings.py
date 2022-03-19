@@ -1,6 +1,7 @@
 from tkinter import *
 import gamemodes.options.languageSettings
 import gamemodes.options.about
+from gamemodes.options.updater import *
 
 def settingSet(ticTacPyApp):
     def languageSettings():
@@ -9,6 +10,9 @@ def settingSet(ticTacPyApp):
     
     def about():
         gamemodes.options.about.aboutBox(ticTacPyApp)
+
+    def checkUpd():
+        checkForUpdates(ticTacPyApp, True)
         
 
     ticTacPyApp.settingsMenu = Toplevel()
@@ -43,5 +47,12 @@ def settingSet(ticTacPyApp):
     placeholder3 = Label(ticTacPyApp.settingsMenu, text="", font=("Arial", 2))
     placeholder3.grid(row=1, column=6, sticky=W)
 
+    buttonForUpdater = Button(ticTacPyApp.settingsMenu, text=ticTacPyApp.updateTxt, font=("Arial", 14))
+    buttonForUpdater["command"] = checkUpd
+    buttonForUpdater.grid(row=3, column=3, sticky=W)
+
     placeholder4 = Label(ticTacPyApp.settingsMenu, text="", font=("Arial", 2))
     placeholder4.grid(row=2, column=0, sticky=W)
+
+    placeholder4 = Label(ticTacPyApp.settingsMenu, text="", font=("Arial", 2))
+    placeholder4.grid(row=4, column=0, sticky=W)

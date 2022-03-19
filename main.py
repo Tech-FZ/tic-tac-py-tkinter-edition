@@ -3,6 +3,7 @@ from gamemodes.pvcom import *
 from tkinter import *
 from gamemodes.locales.localeManager import *
 from gamemodes.settings import *
+from gamemodes.options.updater import *
 
 class App:
     def __init__(self):
@@ -53,6 +54,7 @@ class App:
         self.default = "not defined"
         self.applyButtonText = "not defined"
         self.abortButtonText = "not defined"
+        self.updateTxt = "Check for updates"
 
         # For lang
         self.langText = "not defined"
@@ -72,6 +74,13 @@ class App:
         self.difficultyQuestion = "not defined"
         self.easyTxt = "not defined"
         self.hardTxt = "not defined"
+
+        # Text for updater
+        self.txtUpdateAvailable = "New update released!"
+        self.txtCurrentVer = "Your version:"
+        self.txtNewVer = "Newest version:"
+        self.updateQuestion = "Do you want to be redirected to the GitHub page\nto download the newest version?"
+        self.txtIsNewest = "You're running the latest version already!"
 
         # Preparing for hard KI
         self.gridCopy = []
@@ -94,6 +103,7 @@ root = Tk()
 
 determineLang(ticTacPyApp)
 scanForLanguages(ticTacPyApp)
+checkForUpdates(ticTacPyApp, False)
 ticTacPyApp.languagesAvailable.append(ticTacPyApp.default)
 root.title("Tic Tac Py Tkinter Edition")
 root.geometry()
