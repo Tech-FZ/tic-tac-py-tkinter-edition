@@ -30,6 +30,12 @@ def scanForLanguages(ticTacPyApp):
         elif languages == "ja_JP.py":
             ticTacPyApp.languagesAvailable.append("日本語")
 
+        elif languages == "fr_FR.py":
+            ticTacPyApp.languagesAvailable.append("Français (France)")
+
+        elif languages == "fr_CA.py":
+            ticTacPyApp.languagesAvailable.append("Français (Canada)")
+
 def determineLang(ticTacPyApp):
     def englishUS(ticTacPyApp):
         import gamemodes.locales.languages.en_US
@@ -91,6 +97,22 @@ def determineLang(ticTacPyApp):
         except ImportError:
             englishUS(ticTacPyApp)
 
+    def frenchFR(ticTacPyApp):
+        try:
+            import gamemodes.locales.languages.fr_FR
+            gamemodes.locales.languages.fr_FR.setLanguage(ticTacPyApp)
+
+        except ImportError:
+            englishUS(ticTacPyApp)
+
+    def frenchCA(ticTacPyApp):
+        try:
+            import gamemodes.locales.languages.fr_CA
+            gamemodes.locales.languages.fr_CA.setLanguage(ticTacPyApp)
+
+        except ImportError:
+            frenchFR(ticTacPyApp)
+
     # Detecting system language
     locTuple = locale.getlocale()
     langofSystem = locTuple[0]
@@ -124,6 +146,12 @@ def determineLang(ticTacPyApp):
     elif lang == "/lang ja_JP":
         japanese(ticTacPyApp)
 
+    elif lang == "/lang fr_FR":
+        frenchFR(ticTacPyApp)
+
+    elif lang == "/lang fr_CA":
+        frenchCA(ticTacPyApp)
+
     else:
         # British English
         if langofSystem == "en_GB":
@@ -151,6 +179,12 @@ def determineLang(ticTacPyApp):
         
         elif langofSystem == "ja_JP":
             japanese(ticTacPyApp)
+
+        elif langofSystem == "fr_FR":
+            frenchFR(ticTacPyApp)
+
+        elif langofSystem == "fr_CA":
+            frenchCA(ticTacPyApp)
     
         # American English (if primary language not working or being American English)
         else:
