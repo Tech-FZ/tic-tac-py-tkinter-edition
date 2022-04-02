@@ -8,8 +8,7 @@ Just download the game from the releases, extract the archive and have fun. Thos
 
 # Building the software for Windows
 
-!!! WARNING FOR PYTHON 3.9.12 USERS: On Windows 10 21H2, the software seems to be built successfully, but no matter how hard to try, it errors out with a certification error when trying to run it. I will try again with Python 3.10. !!!
-You will need a machine where Windows and Python are installed.
+You will need a machine where Windows and Python 3.10 are installed.
 
 1. Download the source code.
 2. Extract the archive.
