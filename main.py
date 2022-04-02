@@ -8,9 +8,9 @@ from gamemodes.options.updater import *
 class App:
     def __init__(self):
         # Version definition system for the upcoming updater
-        self.majorVer = 0
-        self.minorVer1 = 8
-        self.minorVer2 = 2
+        self.majorVer = 1
+        self.minorVer1 = 0
+        self.minorVer2 = 0
 
         self.gamemode = 0
         self.lang = "not defined"
