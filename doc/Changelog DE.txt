@@ -1,3 +1,13 @@
+Tic Tac Py - Tkinter Edition, Version 1.0.0 Avril
+- Abgeschlossen am 02.04.2022
+- Tic Tac Py ist nun unter den stabilen Programmen.
+- Ein Icon wurde hinzugefügt. Na endlich!
+- Die Windows-Binaries werden aufgrund eines Zertifikatfehlers in mit Python 3.9.12 erstellten Binaries nun mit Python 3.10 kompiliert.
+- Es kann nun ein französisches Sprachpaket implementiert werden.
+- Das Spiel sucht zum Start und manuell nach Updates und informiert Sie, wenn es welche gibt. So macht man Insider! :D
+- Es gibt von nun an auch Binaries für BSD.
+- Die inzwischen unnötige Datei "cells.py" im gamemodes/assets-Ordner wurde gelöscht.
+
 Tic Tac Py - Tkinter Edition, Version 0.8.2 Beta
 - Abgeschlossen am 26.02.2022
 - Das Neustart-Fenster wurde nun komplett angepasst. Gern geschehen. ;)
