@@ -10,6 +10,7 @@ def playerVsPlayer(ticTacPyApp):
         notice = Toplevel(gamepvcom)
         notice.geometry()
         notice.resizable(width=0, height=0)
+        notice.iconbitmap("ttpicon.ico")
 
         noticeText = Label(notice, text=ticTacPyApp.fieldFilledWarning, font=("Arial", 16))
         noticeText.pack()
@@ -33,6 +34,7 @@ def playerVsPlayer(ticTacPyApp):
         playerOneOnFirstPlace = Toplevel(gamepvcom)
         playerOneOnFirstPlace.geometry()
         playerOneOnFirstPlace.resizable(width=0, height=0)
+        playerOneOnFirstPlace.iconbitmap("ttpicon.ico")
 
         winnerText = Label(playerOneOnFirstPlace, text=f"{ticTacPyApp.playerOneWonText}\n{ticTacPyApp.playAgainQuestion}", font=("Arial", 16))
         winnerText.grid(row=0, column=0, columnspan=3)
@@ -60,6 +62,7 @@ def playerVsPlayer(ticTacPyApp):
         playerOneOnSecondPlace = Toplevel(gamepvcom)
         playerOneOnSecondPlace.geometry()
         playerOneOnSecondPlace.resizable(width=0, height=0)
+        playerOneOnSecondPlace.iconbitmap("ttpicon.ico")
 
         loserText = Label(playerOneOnSecondPlace, text=f"{ticTacPyApp.playerTwoWonText}\n{ticTacPyApp.playAgainQuestion}", font=("Arial", 16))
         loserText.grid(row=0, column=0, columnspan=3)
@@ -87,6 +90,7 @@ def playerVsPlayer(ticTacPyApp):
         playersEqual = Toplevel(gamepvcom)
         playersEqual.geometry()
         playersEqual.resizable(width=0, height=0)
+        playersEqual.iconbitmap("ttpicon.ico")
 
         equalText = Label(playersEqual, text=f"{ticTacPyApp.tieText}!\n{ticTacPyApp.playAgainQuestion}", font=("Arial", 16))
         equalText.grid(row=0, column=0, columnspan=3)
@@ -425,6 +429,7 @@ def playerVsPlayer(ticTacPyApp):
     gamepvcom.resizable(width=0, height=0)
         
     gamepvcom.title(ticTacPyApp.pvpTitleBar)
+    gamepvcom.iconbitmap("ttpicon.ico")
 
     # This is to show the turns
 

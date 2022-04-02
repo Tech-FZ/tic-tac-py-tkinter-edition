@@ -8,6 +8,7 @@ def aboutBox(ticTacPyApp):
     aboutApp.geometry()
     aboutApp.resizable(width=0, height=0)
     aboutApp.title(ticTacPyApp.aboutTitleBar)
+    aboutApp.iconbitmap("ttpicon.ico")
 
     ttp = Label(
         aboutApp,

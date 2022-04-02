@@ -108,6 +108,7 @@ ticTacPyApp.languagesAvailable.append(ticTacPyApp.default)
 root.title("Tic Tac Py Tkinter Edition")
 root.geometry()
 root.resizable(width=0, height=0)
+root.iconbitmap("ttpicon.ico")
 
 warningSentence = Label(text=ticTacPyApp.alphaWarning)
 warningSentence.config(font=("Arial", 12))

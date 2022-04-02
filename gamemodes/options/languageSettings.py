@@ -42,6 +42,7 @@ def langSettingMenu(ticTacPyApp):
         restartAdvise.geometry()
         restartAdvise.title()
         restartAdvise.resizable(width=0, height=0)
+        restartAdvise.iconbitmap("ttpicon.ico")
 
         restartLabel = Label(restartAdvise, text=ticTacPyApp.restartText, font=("Arial", 16))
         restartLabel.grid(row=0, column=0, columnspan=3)
@@ -57,6 +58,7 @@ def langSettingMenu(ticTacPyApp):
     languageSettingsMenu.geometry()
     languageSettingsMenu.title(ticTacPyApp.settingTitleBar)
     languageSettingsMenu.resizable(width=0, height=0)
+    languageSettingsMenu.iconbitmap("ttpicon.ico")
 
     languageLabel = Label(languageSettingsMenu, text=ticTacPyApp.langText, font=("Arial", 16))
     languageLabel.pack()

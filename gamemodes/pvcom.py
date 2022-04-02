@@ -13,6 +13,7 @@ def chooseDifficulty(ticTacPyApp):
     difficultyWindow.title(ticTacPyApp.difficultyTxt)
     difficultyWindow.geometry()
     difficultyWindow.resizable(width=0, height=0)
+    difficultyWindow.iconbitmap("ttpicon.ico")
 
     difficultyQuestionLabel = Label(difficultyWindow, text=ticTacPyApp.difficultyQuestion, font=("Arial", 16))
     difficultyQuestionLabel.pack()

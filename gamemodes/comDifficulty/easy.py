@@ -11,6 +11,7 @@ def playerVsComputer(ticTacPyApp):
         notice = Toplevel(gamepvcom)
         notice.geometry()
         notice.resizable(width=0, height=0)
+        notice.iconbitmap("ttpicon.ico")
 
         noticeText = Label(notice, text=ticTacPyApp.fieldFilledWarning, font=("Arial", 16))
         noticeText.pack()
@@ -34,6 +35,7 @@ def playerVsComputer(ticTacPyApp):
         playerOnFirstPlace = Toplevel(gamepvcom)
         playerOnFirstPlace.geometry()
         playerOnFirstPlace.resizable(width=0, height=0)
+        playerOnFirstPlace.iconbitmap("ttpicon.ico")
 
         winnerText = Label(playerOnFirstPlace, text=f"{ticTacPyApp.playerWonText}\n{ticTacPyApp.playAgainQuestion}", font=("Arial", 16))
         winnerText.grid(row=0, column=0, columnspan=3)
@@ -61,6 +63,7 @@ def playerVsComputer(ticTacPyApp):
         playerOnSecondPlace = Toplevel(gamepvcom)
         playerOnSecondPlace.geometry()
         playerOnSecondPlace.resizable(width=0, height=0)
+        playerOnSecondPlace.iconbitmap("ttpicon.ico")
 
         loserText = Label(playerOnSecondPlace, text=f"{ticTacPyApp.playerLostText}\n{ticTacPyApp.playAgainQuestion}", font=("Arial", 16))
         loserText.grid(row=0, column=0, columnspan=3)
@@ -88,6 +91,7 @@ def playerVsComputer(ticTacPyApp):
         playerEqual = Toplevel(gamepvcom)
         playerEqual.geometry()
         playerEqual.resizable(width=0, height=0)
+        playerEqual.iconbitmap("ttpicon.ico")
 
         equalText = Label(playerEqual, text=f"{ticTacPyApp.tieText}\n{ticTacPyApp.playAgainQuestion}", font=("Arial", 16))
         equalText.grid(row=0, column=0, columnspan=3)
@@ -441,6 +445,7 @@ def playerVsComputer(ticTacPyApp):
     gamepvcom.resizable(width=0, height=0)
         
     gamepvcom.title(ticTacPyApp.pvcomTitleBar)
+    gamepvcom.iconbitmap("ttpicon.ico")
 
     # Placeholder between the left of the window and column 0
     placeholder0 = Label(gamepvcom, text="", font=("Arial", 2))

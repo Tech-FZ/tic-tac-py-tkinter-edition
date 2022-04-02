@@ -19,6 +19,7 @@ def settingSet(ticTacPyApp):
     ticTacPyApp.settingsMenu.geometry()
     ticTacPyApp.settingsMenu.resizable(width=0, height=0)
     ticTacPyApp.settingsMenu.title(ticTacPyApp.settingTitleBar)
+    ticTacPyApp.settingsMenu.iconbitmap("ttpicon.ico")
 
     question = Label(ticTacPyApp.settingsMenu, text=ticTacPyApp.settingQuestion, font=("Arial", 16))
     question.grid(row=0, column=0, columnspan=7)

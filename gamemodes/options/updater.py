@@ -43,6 +43,7 @@ def updateAvailable(ticTacPyApp, newMajor, newMinor1, newMinor2):
     updater.title("Tic Tac Py Updater")
     updater.geometry()
     updater.resizable(width=0, height=0)
+    updater.iconbitmap("ttpicon.ico")
 
     placeholder0 = Label(updater, text="", font=("Arial", 2))
     placeholder0.grid(row=0, column=0)
@@ -91,6 +92,7 @@ def isNewestVer(ticTacPyApp):
     updater.title("Tic Tac Py Updater")
     updater.geometry()
     updater.resizable(width=0, height=0)
+    updater.iconbitmap("ttpicon.ico")
 
     placeholder2 = Label(updater, text="", font=("Arial", 2))
     placeholder2.grid(row=2, column=2)
