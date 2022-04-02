@@ -39,6 +39,7 @@ def setLanguage(ticTacPyApp):
     ticTacPyApp.default = "Default"
     ticTacPyApp.applyButtonText = "Apply"
     ticTacPyApp.abortButtonText = "Abort"
+    ticTacPyApp.updateTxt = "Check for updates"
 
     # Text for lang
     ticTacPyApp.langText = "Language"
@@ -57,3 +58,10 @@ def setLanguage(ticTacPyApp):
     ticTacPyApp.difficultyQuestion = "The computer can be as hard as you like it.\nHow hard should the game be?"
     ticTacPyApp.easyTxt = "Easy"
     ticTacPyApp.hardTxt = "Hard"
+
+    # Text for updater
+    ticTacPyApp.txtUpdateAvailable = "New update released!"
+    ticTacPyApp.txtCurrentVer = "Your version:"
+    ticTacPyApp.txtNewVer = "Newest version:"
+    ticTacPyApp.updateQuestion = "Do you want to be redirected to the GitHub page\nto download the newest version?"
+    ticTacPyApp.txtIsNewest = "You're running the latest version already!"
