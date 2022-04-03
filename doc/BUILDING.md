@@ -52,10 +52,16 @@ RAM: 4 GB or more
 HDD: 1 GB free space or more
 
 ## Instructions
-1. Switch to a virtual terminal where you can login as root.
-2. Install Python 3.10: pkg install python310
-3. Install the tkinter and pip modules: pkg install py310-tkinter py310-pip
-4. Install the requests and PyInstaller module: python310 -m pip install --upgrade requests PyInstaller
-5. Then, type: python310 -m PyInstaller --onefile .\main.py
-6. After completion, copy all files from the source code to the dist folder.
-7. You should have a running main file.
+1. Ensure you are logged in as root, running a graphical environment.
+2. Open a terminal.
+3. Install Python 3.10: pkg install python310
+4. Install the tkinter module: pkg install py310-tkinter
+5. Run this command to run Python 3.10 just with "python": ln -s /usr/local/bin/python3.6 /usr/local/bin/python
+6. For now, I'm going to assume you've got a web browser (doesn't come with BSD by default). Open your preferred browser and go to https://bootstrap.pypa.io/get-pip.py - it will download a file called "get-pip.py" to your computer.
+7. In the terminal, navigate to the Downloads folder: cd /root/Downloads
+8. Install pip with: python ./get-pip.py - You can ignore these warnings as the system-wide installation was intended.
+9. Download the Tic Tac Py source code.
+10. Install the requests and PyInstaller modules: python -m pip install --upgrade requests PyInstaller
+11. Then, type: python -m PyInstaller --onefile .\main.py
+12. After completion, copy all files from the source code to the dist folder.
+13. You should have a running main file.
