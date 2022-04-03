@@ -54,7 +54,7 @@ HDD: 1 GB free space or more
 ## Instructions
 1. Switch to a virtual terminal where you can login as root.
 2. Install Python 3.10: pkg install python310
-3. Install the tkinter and pip modules: pkg install py310-tkinter-3.10.x_y py310-pip-3.10.x_y
+3. Install the tkinter and pip modules: pkg install py310-tkinter py310-pip
 4. Install the requests and PyInstaller module: python310 -m pip install --upgrade requests PyInstaller
 5. Then, type: python310 -m PyInstaller --onefile .\main.py
 6. After completion, copy all files from the source code to the dist folder.
