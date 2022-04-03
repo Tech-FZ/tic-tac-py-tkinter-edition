@@ -61,7 +61,8 @@ HDD: 1 GB free space or more
 7. In the terminal, navigate to the Downloads folder: cd /root/Downloads
 8. Install pip with: python ./get-pip.py - You can ignore these warnings as the system-wide installation was intended.
 9. Download the Tic Tac Py source code.
-10. Install the requests and PyInstaller modules: python -m pip install --upgrade requests PyInstaller
-11. Then, type: python -m PyInstaller --onefile .\main.py
-12. After completion, copy all files from the source code to the dist folder.
-13. You should have a running main file.
+10. Extract it (replace sourcecode.zip with the filename): unzip ./sourcecode.zip
+11. Install the requests and PyInstaller modules: python -m pip install --upgrade requests PyInstaller
+12. Then, type: python -m PyInstaller --onefile .\main.py
+13. After completion, copy all files from the source code to the dist folder.
+14. You should have a running main file.
