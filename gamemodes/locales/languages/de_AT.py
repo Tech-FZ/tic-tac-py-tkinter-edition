@@ -65,3 +65,4 @@ def setLanguage(ticTacPyApp):
     ticTacPyApp.txtNewVer = "Neueste Version:"
     ticTacPyApp.updateQuestion = "Möchten Sie zur GitHub-Seite weitergeleitet\nwerden, um Tic Tac Py zu aktualisieren?"
     ticTacPyApp.txtIsNewest = "Sie spielen bereits die neueste Version!"
+    ticTacPyApp.noInternet = "TTP Updater ist es misslungen, sich mit den\nGitHub-Repository-Servern des Spiels zu verbinden.\nBitte überprüfen Sie Ihre Internetverbindung\nund versuchen Sie es erneut."

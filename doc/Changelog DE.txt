@@ -1,3 +1,8 @@
+Tic Tac Py - Tkinter Edition, Version 1.0.1 Avril
+- Abgeschlossen am 04.04.2022
+- Dies kann als Notfall-Update gesehen werden, welches aufgrund eines kritischen Fehlers, welcher es dem Spiel ohne Internetverbindung unmöglich gemacht hat, zu starten, rausgebracht wurde. Zum Glück ist das nun behoben.
+- Und wenn das Update schon mal da ist, habe ich gleich mal die Beta-Warnung entfernt.
+
 Tic Tac Py - Tkinter Edition, Version 1.0.0 Avril
 - Abgeschlossen am 02.04.2022
 - Tic Tac Py ist nun unter den stabilen Programmen.

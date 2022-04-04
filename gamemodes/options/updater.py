@@ -103,3 +103,20 @@ def isNewestVer(ticTacPyApp):
     okBtn = Button(updater, text=ticTacPyApp.okay, font=("Arial", 12))
     okBtn["command"] = updater.destroy
     okBtn.grid(row=1, column=1)
+
+def noInternetConnection(ticTacPyApp):
+    updater = Toplevel()
+    updater.title("Tic Tac Py Updater")
+    updater.geometry()
+    updater.resizable(width=0, height=0)
+    updater.iconbitmap("ttpicon.ico")
+
+    placeholder2 = Label(updater, text="", font=("Arial", 2))
+    placeholder2.grid(row=2, column=2)
+
+    header = Label(updater, text=ticTacPyApp.noInternet, font=("Arial", 16))
+    header.grid(row=0, column=0, columnspan=3)
+
+    okBtn = Button(updater, text=ticTacPyApp.okay, font=("Arial", 12))
+    okBtn["command"] = updater.destroy
+    okBtn.grid(row=1, column=1)

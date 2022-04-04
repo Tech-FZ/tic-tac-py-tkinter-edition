@@ -10,7 +10,7 @@ class App:
         # Version definition system for the upcoming updater
         self.majorVer = 1
         self.minorVer1 = 0
-        self.minorVer2 = 0
+        self.minorVer2 = 1
 
         self.gamemode = 0
         self.lang = "not defined"
@@ -81,6 +81,7 @@ class App:
         self.txtNewVer = "Newest version:"
         self.updateQuestion = "Do you want to be redirected to the GitHub page\nto download the newest version?"
         self.txtIsNewest = "You're running the latest version already!"
+        self.noInternet = "TTP Updater failed to connect to the GitHub repository\nservers of the game.\nPlease check your internet connection\nand try again."
 
         # Preparing for hard KI
         self.gridCopy = []
@@ -103,16 +104,22 @@ root = Tk()
 
 determineLang(ticTacPyApp)
 scanForLanguages(ticTacPyApp)
-checkForUpdates(ticTacPyApp, False)
+
+try:
+    checkForUpdates(ticTacPyApp, False)
+
+except:
+    pass
+
 ticTacPyApp.languagesAvailable.append(ticTacPyApp.default)
 root.title("Tic Tac Py Tkinter Edition")
 root.geometry()
 root.resizable(width=0, height=0)
 root.iconbitmap("ttpicon.ico")
 
-warningSentence = Label(text=ticTacPyApp.alphaWarning)
-warningSentence.config(font=("Arial", 12))
-warningSentence.grid(row=0, column=0, rowspan=2)
+#warningSentence = Label(text=ticTacPyApp.alphaWarning)
+#warningSentence.config(font=("Arial", 12))
+#warningSentence.grid(row=0, column=0, rowspan=2)
 
 label1 = Label(text=ticTacPyApp.welcome, font=("Arial", 16))
 label1.grid(row=2, column=0)
