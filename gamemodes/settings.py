@@ -12,11 +12,7 @@ def settingSet(ticTacPyApp):
         gamemodes.options.about.aboutBox(ticTacPyApp)
 
     def checkUpd():
-        try:
-            checkForUpdates(ticTacPyApp, True)
-
-        except:
-            noInternetConnection(ticTacPyApp)
+        checkForUpdates(ticTacPyApp, True)
         
 
     ticTacPyApp.settingsMenu = Toplevel()
