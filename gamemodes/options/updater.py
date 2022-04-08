@@ -4,35 +4,40 @@ import requests
 from tkinter import *
 
 def checkForUpdates(ticTacPyApp, manually):
-    url = "https://raw.githubusercontent.com/Tech-FZ/tic-tac-py-tkinter-edition/main/ttpupdatefile.tictacpy"
-    rq = requests.get(url, allow_redirects=True)
-    newVer = open("ttpupdatefile.tictacpy", "wb+")
-    newVer.write(rq.content)
-    newVer.close()
+    try:
+        url = "https://raw.githubusercontent.com/Tech-FZ/tic-tac-py-tkinter-edition/main/ttpupdatefile.tictacpy"
+        rq = requests.get(url, allow_redirects=True)
+        newVer = open("ttpupdatefile.tictacpy", "wb+")
+        newVer.write(rq.content)
+        newVer.close()
 
-    newVer = open("ttpupdatefile.tictacpy", "r+")
-    newVerContent = newVer.readlines()
-    newMajor = newVerContent[0].replace("/newest-major ", "")
-    newMajor = newMajor.replace("\n", "")
-    newMinor1 = newVerContent[1].replace("/newest-minor1 ", "")
-    newMinor1 = newMinor1.replace("\n", "")
-    newMinor2 = newVerContent[2].replace("/newest-minor2 ", "")
-    newMinor2 = newMinor2.replace("\n", "")
+        newVer = open("ttpupdatefile.tictacpy", "r+")
+        newVerContent = newVer.readlines()
+        newMajor = newVerContent[0].replace("/newest-major ", "")
+        newMajor = newMajor.replace("\n", "")
+        newMinor1 = newVerContent[1].replace("/newest-minor1 ", "")
+        newMinor1 = newMinor1.replace("\n", "")
+        newMinor2 = newVerContent[2].replace("/newest-minor2 ", "")
+        newMinor2 = newMinor2.replace("\n", "")
 
-    if int(newMajor) > ticTacPyApp.majorVer:
-        updateAvailable(ticTacPyApp, newMajor, newMinor1, newMinor2)
+        if int(newMajor) > ticTacPyApp.majorVer:
+            updateAvailable(ticTacPyApp, newMajor, newMinor1, newMinor2)
 
-    elif int(newMinor1) > ticTacPyApp.minorVer1:
-        updateAvailable(ticTacPyApp, newMajor, newMinor1, newMinor2)
+        elif int(newMinor1) > ticTacPyApp.minorVer1:
+            updateAvailable(ticTacPyApp, newMajor, newMinor1, newMinor2)
 
-    elif int(newMinor2) > ticTacPyApp.minorVer2:
-        updateAvailable(ticTacPyApp, newMajor, newMinor1, newMinor2)
+        elif int(newMinor2) > ticTacPyApp.minorVer2:
+            updateAvailable(ticTacPyApp, newMajor, newMinor1, newMinor2)
 
-    else:
+        else:
+            if manually == True:
+                isNewestVer(ticTacPyApp)
+
+        newVer.close()
+
+    except:
         if manually == True:
-            isNewestVer(ticTacPyApp)
-
-    newVer.close()
+            noInternetConnection(ticTacPyApp)
 
 def updateAvailable(ticTacPyApp, newMajor, newMinor1, newMinor2):
     def prepUpdRedirect():
