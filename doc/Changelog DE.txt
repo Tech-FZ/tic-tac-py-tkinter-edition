@@ -1,3 +1,13 @@
+Tic Tac Py - Tkinter Edition, Version 1.0.2 Avril
+- Abgeschlossen am 09.04.2022
+- Icons werden nicht zu Linux und BSD kommen - stattdessen wurde ein Plattform-Checker geschrieben, damit man Tic Tac Py für diese Plattformen leichter kompilieren kann. :/
+- Bitte beachten Sie, dass die Version 1.0.1 Sie unter Linux und BSD nicht an Updates erinnert, da dort der TTP Updater nicht funktioniert. Ich gehe aber davon aus, dass diese Version Sie unter Windows genauso wie unter Linux und BSD an künftige Updates erinnern wird. ;)
+
+Tic Tac Py - Tkinter Edition, Version 1.0.1 Avril
+- Abgeschlossen am 04.04.2022
+- Dies kann als Notfall-Update gesehen werden, welches aufgrund eines kritischen Fehlers, welcher es dem Spiel ohne Internetverbindung unmöglich gemacht hat, zu starten, rausgebracht wurde. Zum Glück ist das nun behoben.
+- Und wenn das Update schon mal da ist, habe ich gleich mal die Beta-Warnung entfernt.
+
 Tic Tac Py - Tkinter Edition, Version 1.0.0 Avril
 - Abgeschlossen am 02.04.2022
 - Tic Tac Py ist nun unter den stabilen Programmen.
