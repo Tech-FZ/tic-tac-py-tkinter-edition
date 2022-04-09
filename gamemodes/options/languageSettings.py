@@ -1,6 +1,6 @@
 from tkinter import *
-from tkinter import ttk
 from gamemodes.locales.localeManager import *
+import platform
 
 def langSettingMenu(ticTacPyApp):
     def applyFunction():
@@ -42,7 +42,9 @@ def langSettingMenu(ticTacPyApp):
         restartAdvise.geometry()
         restartAdvise.title()
         restartAdvise.resizable(width=0, height=0)
-        restartAdvise.iconbitmap("ttpicon.ico")
+
+        if platform.system() == "Windows":
+            restartAdvise.iconbitmap("ttpicon.ico")
 
         restartLabel = Label(restartAdvise, text=ticTacPyApp.restartText, font=("Arial", 16))
         restartLabel.grid(row=0, column=0, columnspan=3)
@@ -58,7 +60,9 @@ def langSettingMenu(ticTacPyApp):
     languageSettingsMenu.geometry()
     languageSettingsMenu.title(ticTacPyApp.settingTitleBar)
     languageSettingsMenu.resizable(width=0, height=0)
-    languageSettingsMenu.iconbitmap("ttpicon.ico")
+
+    if platform.system() == "Windows":
+        languageSettingsMenu.iconbitmap("ttpicon.ico")
 
     languageLabel = Label(languageSettingsMenu, text=ticTacPyApp.langText, font=("Arial", 16))
     languageLabel.pack()

@@ -1,14 +1,14 @@
 from tkinter import *
-from subprocess import *
-from platform import *
-import os
+import platform
 
 def aboutBox(ticTacPyApp):
     aboutApp = Toplevel(ticTacPyApp.settingsMenu)
     aboutApp.geometry()
     aboutApp.resizable(width=0, height=0)
     aboutApp.title(ticTacPyApp.aboutTitleBar)
-    aboutApp.iconbitmap("ttpicon.ico")
+
+    if platform.system() == "Windows":
+        aboutApp.iconbitmap("ttpicon.ico")
 
     ttp = Label(
         aboutApp,

@@ -4,6 +4,7 @@ from tkinter import *
 from gamemodes.locales.localeManager import *
 from gamemodes.settings import *
 from gamemodes.options.updater import *
+import platform
 
 class App:
     def __init__(self):
@@ -109,7 +110,9 @@ ticTacPyApp.languagesAvailable.append(ticTacPyApp.default)
 root.title("Tic Tac Py Tkinter Edition")
 root.geometry()
 root.resizable(width=0, height=0)
-root.iconbitmap("ttpicon.ico")
+
+if platform.system() == "Windows":
+    root.iconbitmap("ttpicon.ico")
 
 #warningSentence = Label(text=ticTacPyApp.alphaWarning)
 #warningSentence.config(font=("Arial", 12))
