@@ -1,6 +1,7 @@
 from tkinter import *
 import gamemodes.comDifficulty.easy
 import gamemodes.comDifficulty.hard
+import platform
 
 def chooseDifficulty(ticTacPyApp):
     def easyChosen():
@@ -13,7 +14,9 @@ def chooseDifficulty(ticTacPyApp):
     difficultyWindow.title(ticTacPyApp.difficultyTxt)
     difficultyWindow.geometry()
     difficultyWindow.resizable(width=0, height=0)
-    difficultyWindow.iconbitmap("ttpicon.ico")
+    
+    if platform.system() == "Windows":
+        difficultyWindow.iconbitmap("ttpicon.ico")
 
     difficultyQuestionLabel = Label(difficultyWindow, text=ticTacPyApp.difficultyQuestion, font=("Arial", 16))
     difficultyQuestionLabel.pack()
