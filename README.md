@@ -1,5 +1,7 @@
 # Tic Tac Py - Tkinter Edition
 
+!! This version is not going to be released !!
+
 This is Tic Tac Py - Tkinter Edition which is currently an open beta.
 
 # Installing the software
