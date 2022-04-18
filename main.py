@@ -10,8 +10,8 @@ class App:
     def __init__(self):
         # Version definition system for the upcoming updater
         self.majorVer = 1
-        self.minorVer1 = 0
-        self.minorVer2 = 2
+        self.minorVer1 = 99
+        self.minorVer2 = 0
 
         self.gamemode = 0
         self.lang = "not defined"
@@ -31,6 +31,7 @@ class App:
         self.yes = "not defined"
         self.no = "not defined"
         self.tieText = "not defined"
+        self.close = "Close"
 
         # Text for PvCom
         self.playerLostText = "not defined"
@@ -56,6 +57,7 @@ class App:
         self.applyButtonText = "not defined"
         self.abortButtonText = "not defined"
         self.updateTxt = "Check for updates"
+        self.creditTxt = "Credits"
 
         # For lang
         self.langText = "not defined"
@@ -83,6 +85,12 @@ class App:
         self.updateQuestion = "Do you want to be redirected to the GitHub page\nto download the newest version?"
         self.txtIsNewest = "You're running the latest version already!"
         self.noInternet = "TTP Updater failed to connect to the GitHub repository\nservers of the game.\nPlease check your internet connection\nand try again."
+
+        # Text for credits
+        self.creditTitle = "Tic Tac Py - Credits"
+        self.creditDev = "Programming"
+        self.creditArts = "Arts"
+        self.creditTranslation = "Translation"
 
         # Preparing for hard KI
         self.gridCopy = []

@@ -16,6 +16,7 @@ def setLanguage(ticTacPyApp):
     ticTacPyApp.yes = "Yes"
     ticTacPyApp.no = "No"
     ticTacPyApp.tieText = "Nobody won this match!"
+    ticTacPyApp.close = "Close"
 
     # Text for PvCom
     ticTacPyApp.playerLostText = "You lost this match!"
@@ -40,6 +41,7 @@ def setLanguage(ticTacPyApp):
     ticTacPyApp.applyButtonText = "Apply"
     ticTacPyApp.abortButtonText = "Abort"
     ticTacPyApp.updateTxt = "Check for updates"
+    ticTacPyApp.creditTxt = "Credits"
 
     # Text for lang
     ticTacPyApp.langText = "Language"
@@ -66,3 +68,9 @@ def setLanguage(ticTacPyApp):
     ticTacPyApp.updateQuestion = "Do you want to be redirected to the GitHub page\nto download the newest version?"
     ticTacPyApp.txtIsNewest = "You're running the latest version already!"
     ticTacPyApp.noInternet = "TTP Updater failed to connect to the GitHub repository\nservers of the game.\nPlease check your internet connection\nand try again."
+    
+    # Text for credits
+    ticTacPyApp.creditTitle = "Tic Tac Py - Credits"
+    ticTacPyApp.creditDev = "Programming"
+    ticTacPyApp.creditArts = "Arts"
+    ticTacPyApp.creditTranslation = "Translation"

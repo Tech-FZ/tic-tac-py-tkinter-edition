@@ -18,7 +18,7 @@ def aboutBox(ticTacPyApp):
     
     ttp.pack()
 
-    licenseLabel = Label(aboutApp, text="BSD 3-Clause License\n\nCopyright (c) 2021-2022, Tech-FZ\nAll rights reserved."
+    licenseLabel = Label(aboutApp, text="BSD 3-Clause License\n\nCopyright (c) 2021-2022, Tech-FZ and Tic Tac Py contributors\nAll rights reserved."
         "\n\nRedistribution and use in source and binary forms, with or without\nmodification, are permitted provided that the following conditions are met:"
         "\n\n1. Redistributions of source code must retain the above copyright notice, this\nlist of conditions and the following disclaimer."
         "\n\n2. Redistributions in binary form must reproduce the above copyright notice,\nthis list of conditions and the following disclaimer in the documentation\nand/or other materials provided with the distribution."

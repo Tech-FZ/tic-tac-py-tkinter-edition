@@ -1,3 +1,9 @@
+Tic Tac Py - Tkinter Edition, Version 2.0.0 B
+- Under construction, newest pre-release build as of 18th April, 2022 is 1.99.0
+- A credits menu has been implemented.
+- The settings layout has been corrected.
+- The license has been updated.
+
 Tic Tac Py - Tkinter Edition, Version 1.0.2 Avril
 - Date of completion: 9th April, 2022
 - Icons won't come to Linux and BSD - a platform check has been made instead in order to make compiling Tic Tac Py for those platforms easier. :/
