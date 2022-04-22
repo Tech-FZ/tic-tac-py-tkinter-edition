@@ -18,7 +18,6 @@ def checkForUpdates(ticTacPyApp, manually):
 
         newVer = open("ttpupdatefile.tictacpy", "r+")
         newVerContent = newVer.readlines()
-        print(newVerContent)
         newMajor = newVerContent[0].replace("/newest-major ", "")
         newMajor = newMajor.replace("\n", "")
         newMinor1 = newVerContent[1].replace("/newest-minor1 ", "")
@@ -30,10 +29,11 @@ def checkForUpdates(ticTacPyApp, manually):
             updateAvailable(ticTacPyApp, newMajor, newMinor1, newMinor2)
 
         elif int(newMinor1) > ticTacPyApp.minorVer1:
-            updateAvailable(ticTacPyApp, newMajor, newMinor1, newMinor2)
+            if int(newMajor) >= ticTacPyApp.majorVer:
+                updateAvailable(ticTacPyApp, newMajor, newMinor1, newMinor2)
 
         elif int(newMinor2) > ticTacPyApp.minorVer2:
-            if int(newMajor) > ticTacPyApp.majorVer and int(newMinor1) >= ticTacPyApp.minorVer1:
+            if int(newMajor) >= ticTacPyApp.majorVer and int(newMinor1) >= ticTacPyApp.minorVer1:
                 updateAvailable(ticTacPyApp, newMajor, newMinor1, newMinor2)
 
             else:

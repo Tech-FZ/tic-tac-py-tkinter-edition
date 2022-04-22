@@ -1,6 +1,6 @@
 Tic Tac Py - Tkinter Edition, Version 2.0.0 B
-- In Entwicklung, neuester Build am 18.04.2022 ist 1.99.0
-- Ein Menü für Credits wurde implementiert.
+- In Entwicklung, neuester Build am 22.04.2022 ist 1.99.1
+- Credits wurden implementiert.
 - Das Layout in den Einstellungen wurde korrigiert.
 - Die Lizenz wurde aktualisiert.
 

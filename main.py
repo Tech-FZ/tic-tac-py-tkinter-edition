@@ -11,7 +11,7 @@ class App:
         # Version definition system for the upcoming updater
         self.majorVer = 1
         self.minorVer1 = 99
-        self.minorVer2 = 0
+        self.minorVer2 = 1
 
         self.gamemode = 0
         self.lang = "not defined"

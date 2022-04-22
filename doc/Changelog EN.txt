@@ -1,6 +1,6 @@
 Tic Tac Py - Tkinter Edition, Version 2.0.0 B
-- Under construction, newest pre-release build as of 18th April, 2022 is 1.99.0
-- A credits menu has been implemented.
+- Under construction, newest pre-release build as of 22nd April, 2022 is 1.99.1
+- Credits have been implemented.
 - The settings layout has been corrected.
 - The license has been updated.
 

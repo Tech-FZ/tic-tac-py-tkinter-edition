@@ -1,7 +1,19 @@
 from tkinter import *
 import platform
+from gamemodes.options.credits.programming import *
+from gamemodes.options.credits.arts import *
+from gamemodes.options.credits.translation import *
 
 def creditMenu(ticTacPyApp):
+    def programmingBtnFunc():
+        creditProgramming(ticTacPyApp)
+
+    def artBtnFunc():
+        creditArts(ticTacPyApp)
+
+    def langBtnFunc():
+        creditTranslation(ticTacPyApp)
+
     creditMenuWin = Toplevel()
     creditMenuWin.geometry()
     creditMenuWin.resizable(height=0, width=0)
@@ -23,12 +35,15 @@ def creditMenu(ticTacPyApp):
     placeholder4.grid(row=4, column=4)
 
     devBtn = Button(creditMenuWin, text=ticTacPyApp.creditDev, font=("Arial", 14))
+    devBtn["command"] = programmingBtnFunc
     devBtn.grid(row=1, column=1)
 
     artsBtn = Button(creditMenuWin, text=ticTacPyApp.creditArts, font=("Arial", 14))
+    artsBtn["command"] = artBtnFunc
     artsBtn.grid(row=1, column=3)
 
     translateBtn = Button(creditMenuWin, text=ticTacPyApp.creditTranslation, font=("Arial", 14))
+    translateBtn["command"] = langBtnFunc
     translateBtn.grid(row=3, column=1)
 
     closeBtn = Button(creditMenuWin, text=ticTacPyApp.close, font=("Arial", 14))
