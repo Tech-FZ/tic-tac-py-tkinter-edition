@@ -1,8 +1,11 @@
-Tic Tac Py - Tkinter Edition, Version 2.0.0 B
-- In Entwicklung, neuester Build am 22.04.2022 ist 1.99.1
+Tic Tac Py - Tkinter Edition, Version 2.0.0 Baxter
+- In Entwicklung, neuester Build am 24.04.2022 ist 1.99.2
 - Credits wurden implementiert.
 - Das Layout in den Einstellungen wurde korrigiert.
 - Die Lizenz wurde aktualisiert.
+- Der Updater wurde repariert.
+- Die Systemanforderungen wurden angepasst.
+- Es wurde eine unnötige Zeile im Sprachmanager rausgeschrieben.
 
 Tic Tac Py - Tkinter Edition, Version 1.0.2 Avril
 - Abgeschlossen am 09.04.2022

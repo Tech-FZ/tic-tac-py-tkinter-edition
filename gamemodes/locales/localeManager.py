@@ -3,8 +3,7 @@ import os
 
 def scanForLanguages(ticTacPyApp):
     languagesFound = os.listdir(os.path.join("gamemodes/locales/languages"))
-
-    i = 0
+    
     for languages in languagesFound:
         if languages == "en_GB.py":
             ticTacPyApp.languagesAvailable.append("English (United Kingdom)")

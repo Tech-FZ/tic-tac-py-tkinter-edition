@@ -4,6 +4,7 @@ from tkinter import *
 from gamemodes.locales.localeManager import *
 from gamemodes.settings import *
 from gamemodes.options.updater import *
+from themes.thememgr import *
 import platform
 
 class App:
@@ -11,7 +12,7 @@ class App:
         # Version definition system for the upcoming updater
         self.majorVer = 1
         self.minorVer1 = 99
-        self.minorVer2 = 1
+        self.minorVer2 = 2
 
         self.gamemode = 0
         self.lang = "not defined"
@@ -95,6 +96,10 @@ class App:
         # Preparing for hard KI
         self.gridCopy = []
 
+        # Preparing theme loading
+        self.themedir = "themes/default"
+        self.themes = []
+
     def gamemodeCheck(self):
         if self.gamemode.get() == 1:
             playerVsPlayer(ticTacPyApp)
@@ -114,6 +119,7 @@ root = Tk()
 determineLang(ticTacPyApp)
 scanForLanguages(ticTacPyApp)
 checkForUpdates(ticTacPyApp, False)
+themeInit(ticTacPyApp)
 ticTacPyApp.languagesAvailable.append(ticTacPyApp.default)
 root.title("Tic Tac Py Tkinter Edition")
 root.geometry()
