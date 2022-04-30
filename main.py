@@ -13,7 +13,7 @@ class App:
         self.majorVer = 1
         self.minorVer1 = 99
         self.minorVer2 = 2
-
+        self.ttpVersionGroup = 1
         self.gamemode = 0
         self.lang = "not defined"
 
@@ -59,6 +59,7 @@ class App:
         self.abortButtonText = "not defined"
         self.updateTxt = "Check for updates"
         self.creditTxt = "Credits"
+        self.themeSetTxt = "Theme Settings"
 
         # For lang
         self.langText = "not defined"
@@ -99,6 +100,14 @@ class App:
         # Preparing theme loading
         self.themedir = "themes/default"
         self.themes = []
+
+        # Text for theme settings
+        self.themeAuthorMadeBy = "Made by:"
+        self.themeLicenseTxt = "License:"
+        self.themeForOlderVer = "WARNING: This theme has been made for an older version of Tic Tac Py."
+        self.themeForNewerVer = "WARNING: This theme has been made for a newer version of Tic Tac Py."
+        self.themeCompatibilityWarning = "You may still use this theme, but issues will likely occur."
+        self.getThemeInfoTxt = "About this theme"
 
     def gamemodeCheck(self):
         if self.gamemode.get() == 1:

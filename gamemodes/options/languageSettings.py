@@ -37,6 +37,8 @@ def langSettingMenu(ticTacPyApp):
             
             elif languageSelector.selection_get() == ticTacPyApp.default:
                 options.write(line.replace(lang, "/lang std"))
+
+        options.close()
         
         restartAdvise = Toplevel(languageSettingsMenu)
         restartAdvise.geometry()

@@ -3,12 +3,15 @@ import gamemodes.options.languageSettings
 import gamemodes.options.about
 from gamemodes.options.updater import *
 from gamemodes.options.credits.menu import *
+import gamemodes.options.themeSettings
 import platform
 
 def settingSet(ticTacPyApp):
     def languageSettings():
         gamemodes.options.languageSettings.langSettingMenu(ticTacPyApp)
 
+    def themeSettings():
+        gamemodes.options.themeSettings.langSettingMenu(ticTacPyApp)
     
     def about():
         gamemodes.options.about.aboutBox(ticTacPyApp)
@@ -57,6 +60,10 @@ def settingSet(ticTacPyApp):
     buttonForUpdater = Button(ticTacPyApp.settingsMenu, text=ticTacPyApp.updateTxt, font=("Arial", 14))
     buttonForUpdater["command"] = checkUpd
     buttonForUpdater.grid(row=3, column=1)
+
+    buttonForThemes = Button(ticTacPyApp.settingsMenu, text=ticTacPyApp.themeSetTxt, font=("Arial", 14))
+    buttonForThemes["command"] = themeSettings
+    buttonForThemes.grid(row=3, column=3)
 
     buttonForCredits = Button(ticTacPyApp.settingsMenu, text=ticTacPyApp.creditTxt, font=("Arial", 14))
     buttonForCredits["command"] = creditMenuOpen

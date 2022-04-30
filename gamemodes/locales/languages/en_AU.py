@@ -42,6 +42,7 @@ def setLanguage(ticTacPyApp):
     ticTacPyApp.abortButtonText = "Abort"
     ticTacPyApp.updateTxt = "Check for updates"
     ticTacPyApp.creditTxt = "Credits"
+    ticTacPyApp.themeSetTxt = "Theme Settings"
 
     # Text for lang
     ticTacPyApp.langText = "Language"
@@ -74,3 +75,11 @@ def setLanguage(ticTacPyApp):
     ticTacPyApp.creditDev = "Programming"
     ticTacPyApp.creditArts = "Arts"
     ticTacPyApp.creditTranslation = "Translation"
+
+    # Text for theme settings
+    ticTacPyApp.themeAuthorMadeBy = "Made by:"
+    ticTacPyApp.themeLicenseTxt = "License:"
+    ticTacPyApp.themeForOlderVer = "WARNING: This theme has been made for an older version of Tic Tac Py."
+    ticTacPyApp.themeForNewerVer = "WARNING: This theme has been made for a newer version of Tic Tac Py."
+    ticTacPyApp.themeCompatibilityWarning = "You may still use this theme, but issues will likely occur."
+    ticTacPyApp.getThemeInfoTxt = "About this theme"

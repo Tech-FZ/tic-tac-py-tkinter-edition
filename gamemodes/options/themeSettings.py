@@ -1,17 +1,93 @@
 from tkinter import *
 from themes.thememgr import *
 import platform
-import os
 
 def langSettingMenu(ticTacPyApp):
-    def applyFunction():
+    def themeInfoPrep():
+        themeSelected = languageSelector.selection_get()
+        i = 0
+
+        while i < len(themelist):
+            if themelist[i][2] == themeSelected:
+                count = i
+                break
+
+            i += 1
+
+        themeInfo(themelist[count])
+
+    def themeInfo(themeToGetMoreInfoAbout):
+        creditArtsWin = Toplevel()
+        creditArtsWin.geometry()
+        creditArtsWin.resizable(height=0, width=0)
+        creditArtsWin.title(ticTacPyApp.settingTitleBar)
+    
+        if platform.system() == "Windows":
+            creditArtsWin.iconbitmap("ttpicon.ico")
+
+        header = Label(creditArtsWin, text=f"{ticTacPyApp.getThemeInfoTxt}", font=("Arial", 16))
+        header.pack()
+
+        placeholder0 = Label(creditArtsWin, text="", font=("Arial", 2))
+        placeholder0.pack()
+
+        themeInfoBox = Text(creditArtsWin, height=4, width=45, font=("Arial", 8))
+        themeInfoBox.insert(END, f"{themeToGetMoreInfoAbout[2]}\n")
+        themeInfoBox.insert(END, f"{ticTacPyApp.themeAuthorMadeBy} {themeToGetMoreInfoAbout[4]}\n")
+        themeInfoBox.insert(END, f"{themeToGetMoreInfoAbout[3]}\n")
+        themeInfoBox.insert(END, f"{ticTacPyApp.themeLicenseTxt} {themeToGetMoreInfoAbout[5]}\n")
+
+        if int(themeToGetMoreInfoAbout[1]) != ticTacPyApp.ttpVersionGroup:
+            if int(themeToGetMoreInfoAbout[1]) < ticTacPyApp.ttpVersionGroup:
+                themeInfoBox.insert(END, f"\n{ticTacPyApp.themeForOlderVer}\n")
+
+            elif int(themeToGetMoreInfoAbout[1]) > ticTacPyApp.ttpVersionGroup:
+                themeInfoBox.insert(END, f"\n{ticTacPyApp.themeForNewerVer}\n")
+
+            themeInfoBox.insert(END, f"\n{ticTacPyApp.themeCompatibilityWarning}\n")
+
+        themeInfoBox.config(state="disabled")
+        themeInfoBox.pack()
+
+        placeholder1 = Label(creditArtsWin, text="", font=("Arial", 2))
+        placeholder1.pack()
+
+        closeBtn = Button(creditArtsWin, text=ticTacPyApp.close, font=("Arial", 14))
+        closeBtn["command"] = creditArtsWin.destroy
+        closeBtn.pack()
+
+        placeholder2 = Label(creditArtsWin, text="", font=("Arial", 2))
+        placeholder2.pack()
+
+    def prepareApplyOne():
+        themeSelected = languageSelector.selection_get()
+        i = 0
+
+        while i < len(themelist):
+            if themelist[i][2] == themeSelected:
+                count = i
+                break
+
+            i += 1
+
+        prepareApplyTwo(count)
+
+    def prepareApplyTwo(index):
+        applyFunction(themelist[index][0])
+
+    def applyFunction(themeToSet):
         options = open("gamemodes/options/options.tictacpy", "r")
         content = options.readlines()
-        theme = content[1]
+        themeReplaced = content[1]
         options.close()
 
-        #options = open("gamemodes/options/options.tictacpy", "w")
-        
+        ticTacPyApp.themedir = f"themes/{themeToSet}"
+
+        options = open("gamemodes/options/options.tictacpy", "w")
+        for line in content:
+            options.write(line.replace(themeReplaced, f"/theme \"{ticTacPyApp.themedir}\""))
+
+        options.close()
         
         restartAdvise = Toplevel(languageSettingsMenu)
         restartAdvise.geometry()
@@ -41,7 +117,7 @@ def langSettingMenu(ticTacPyApp):
     if platform.system() == "Windows":
         languageSettingsMenu.iconbitmap("ttpicon.ico")
 
-    languageLabel = Label(languageSettingsMenu, text=ticTacPyApp.langText, font=("Arial", 16))
+    languageLabel = Label(languageSettingsMenu, text=ticTacPyApp.themeSetTxt, font=("Arial", 16))
     languageLabel.pack()
 
     languageSelector = Listbox(languageSettingsMenu)
@@ -95,11 +171,12 @@ def langSettingMenu(ticTacPyApp):
     languageSelector.config(yscrollcommand=scrollbar.set)
     scrollbar.config(command=languageSelector.yview)
 
-    notFoundLabel = Label(languageSettingsMenu, text=ticTacPyApp.langNotFoundText, font=("Arial", 16))
-    notFoundLabel.pack()
+    infoButton = Button(languageSettingsMenu, text=ticTacPyApp.getThemeInfoTxt, font=("Arial", 14))
+    infoButton["command"] = themeInfoPrep
+    infoButton.pack()
 
     okButton = Button(languageSettingsMenu, text=ticTacPyApp.okay, font=("Arial", 14))
-    okButton["command"] = applyFunction
+    okButton["command"] = prepareApplyOne
     okButton.pack()
 
     abortButton = Button(languageSettingsMenu, text=ticTacPyApp.abortButtonText, font=("Arial", 14))
