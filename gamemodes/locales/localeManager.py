@@ -35,6 +35,9 @@ def scanForLanguages(ticTacPyApp):
         elif languages == "fr_CA.py":
             ticTacPyApp.languagesAvailable.append("Français (Canada)")
 
+        elif languages == "uk_UA.py":
+            ticTacPyApp.languagesAvailable.append("українська")
+
 def determineLang(ticTacPyApp):
     def englishUS(ticTacPyApp):
         import gamemodes.locales.languages.en_US
@@ -112,6 +115,14 @@ def determineLang(ticTacPyApp):
         except ImportError:
             frenchFR(ticTacPyApp)
 
+    def ukrainian(ticTacPyApp):
+        try:
+            import gamemodes.locales.languages.uk_UA
+            gamemodes.locales.languages.uk_UA.setLanguage(ticTacPyApp)
+
+        except ImportError:
+            frenchFR(ticTacPyApp)
+
     # Detecting system language
     locTuple = locale.getlocale()
     langofSystem = locTuple[0]
@@ -151,6 +162,9 @@ def determineLang(ticTacPyApp):
     elif lang == "/lang fr_CA":
         frenchCA(ticTacPyApp)
 
+    elif lang == "/lang uk_UA":
+        ukrainian(ticTacPyApp)
+
     else:
         # British English
         if langofSystem == "en_GB":
@@ -184,7 +198,10 @@ def determineLang(ticTacPyApp):
 
         elif langofSystem == "fr_CA":
             frenchCA(ticTacPyApp)
-    
+
+        elif langofSystem == "uk_UA":
+            ukrainian(ticTacPyApp)
+
         # American English (if primary language not working or being American English)
         else:
             englishUS(ticTacPyApp)

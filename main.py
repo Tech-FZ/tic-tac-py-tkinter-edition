@@ -6,13 +6,14 @@ from gamemodes.settings import *
 from gamemodes.options.updater import *
 from themes.thememgr import *
 import platform
+from pathlib import Path
 
 class App:
     def __init__(self):
         # Version definition system for the upcoming updater
         self.majorVer = 1
         self.minorVer1 = 99
-        self.minorVer2 = 2
+        self.minorVer2 = 3
         self.ttpVersionGroup = 1
         self.gamemode = 0
         self.lang = "not defined"
@@ -100,6 +101,8 @@ class App:
         # Preparing theme loading
         self.themedir = "themes/default"
         self.themes = []
+        self.ttpPath = Path("gamemodes")
+        self.ttpPathFinal = self.ttpPath.parent.absolute()
 
         # Text for theme settings
         self.themeAuthorMadeBy = "Made by:"

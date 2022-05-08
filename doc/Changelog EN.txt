@@ -1,5 +1,5 @@
 Tic Tac Py - Tkinter Edition, Version 2.0.0 Baxter
-- Under construction, newest pre-release build as of 30th April, 2022 is 1.99.2
+- Under construction, newest pre-release build as of 8th May, 2022 is 1.99.3
 - Credits have been implemented.
 - The settings layout has been corrected.
 - The license has been updated.
@@ -9,6 +9,8 @@ Tic Tac Py - Tkinter Edition, Version 2.0.0 Baxter
 - Theme support has been prepared.
 - The backend of the language settings has been fixed.
 - A French translation of the changelog is now here.
+- Ukrainian and French language packs are now fully implementable.
+- Theme support has been implemented into easy Player vs. Computer mode.
 
 Tic Tac Py - Tkinter Edition, Version 1.0.2 Avril
 - Date of completion: 9th April, 2022

@@ -34,6 +34,15 @@ def langSettingMenu(ticTacPyApp):
             
             elif languageSelector.selection_get() == "日本語":
                 options.write(line.replace(lang, "/lang ja_JP"))
+
+            elif languageSelector.selection_get() == "українська":
+                options.write(line.replace(lang, "/lang uk_UA"))
+
+            elif languageSelector.selection_get() == "Français (France)":
+                options.write(line.replace(lang, "/lang fr_FR"))
+
+            elif languageSelector.selection_get() == "Français (Canada)":
+                options.write(line.replace(lang, "/lang fr_CA"))
             
             elif languageSelector.selection_get() == ticTacPyApp.default:
                 options.write(line.replace(lang, "/lang std"))

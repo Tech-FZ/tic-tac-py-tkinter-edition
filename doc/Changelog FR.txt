@@ -1,5 +1,5 @@
 Tic Tac Py - Tkinter Edition, Version 2.0.0 Baxter
-- En développement, la toute dernière nouveau build en 30 avril, 2022 est 1.99.2
+- En développement, la toute dernière nouveau build en 8 mai, 2022 est 1.99.3
 - La Tic Tac Py développement équipe implémente du crédit.
 - Nous corrigeons la mise en page dans la paramètre.
 - Nous actualisons la licence.
@@ -9,3 +9,6 @@ Tic Tac Py - Tkinter Edition, Version 2.0.0 Baxter
 - Nous préparons la prise en charge pour de la désigns.
 - Nous corrigeons la backend en de la paramètre en lingue.
 - Une changelog comme de la traduction française est ici désormais.
+- La suite lingue française et la suite lingue ukrainienne sont completètes.
+- Nous pouvons implémentons la suite lingue française et la suite lingue ukrainienne complètement.
+- Le support de thème a été implémenté en mode Easy Player vs. Ordinateur.
