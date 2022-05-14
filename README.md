@@ -1,5 +1,6 @@
 # Tic Tac Py - Tkinter Edition
 
+!! This version is under construction and not ready for production use !!
 This is Tic Tac Py - Tkinter Edition which is currently an open beta.
 
 # Installing the software
