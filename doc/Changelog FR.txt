@@ -11,4 +11,4 @@ Tic Tac Py - Tkinter Edition, Version 2.0.0 Baxter
 - Une changelog comme de la traduction française est ici désormais.
 - La suite lingue française et la suite lingue ukrainienne sont completètes.
 - Nous pouvons implémentons la suite lingue française et la suite lingue ukrainienne complètement.
-- Le support de thème a été implémenté en mode Easy Player vs. Ordinateur.
+- Le support de thème a été implémenté.

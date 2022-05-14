@@ -1,11 +1,47 @@
 import gamemodes.assets.turnCounter
 from tkinter import *
 import platform
+from PIL import Image, ImageTk
 
 # Player is O, Computer is X.
 
 def playerVsPlayer(ticTacPyApp):
+    maximgwidth = 128
+    maximgheight = 64
+
     field = [[" ", " ", " "], [" ", " ", " "], [" ", " ", " "]]
+
+    oTexture = Image.open(f"{ticTacPyApp.ttpPathFinal}/{ticTacPyApp.themedir}/assets/o.png")
+    oTextureRatio = oTexture.width / oTexture.height
+    oTextureFinalWidth = oTexture.width
+
+    while oTextureFinalWidth > maximgwidth:
+        oTextureFinalWidth -= 1
+
+    oTextureFinalHeight = oTextureFinalWidth / oTextureRatio
+
+    while oTextureFinalHeight > maximgheight:
+        oTextureFinalWidth = oTextureFinalWidth / 2
+        oTextureFinalHeight = oTextureFinalHeight / 2
+
+    oTexture = oTexture.resize([int(oTextureFinalWidth), int(oTextureFinalHeight)], Image.ANTIALIAS)
+    oPhotoTexture = ImageTk.PhotoImage(oTexture)
+
+    xTexture = Image.open(f"{ticTacPyApp.ttpPathFinal}/{ticTacPyApp.themedir}/assets/x.png")
+    xTextureRatio = xTexture.width / xTexture.height
+    xTextureFinalWidth = xTexture.width
+
+    while xTextureFinalWidth > maximgwidth:
+        xTextureFinalWidth -= 1
+
+    xTextureFinalHeight = xTextureFinalWidth / xTextureRatio
+
+    while xTextureFinalHeight > maximgheight:
+        xTextureFinalWidth = xTextureFinalWidth / 2
+        xTextureFinalHeight = xTextureFinalHeight / 2
+
+    xTexture = xTexture.resize([int(xTextureFinalWidth), int(xTextureFinalHeight)], Image.ANTIALIAS)
+    xPhotoTexture = ImageTk.PhotoImage(xTexture)
 
     def fieldFilled():
         notice = Toplevel(gamepvcom)
@@ -452,45 +488,84 @@ def playerVsPlayer(ticTacPyApp):
     placeholder0 = Label(gamepvcom, text="", font=("Arial", 2))
     placeholder0.grid(row=1, column=0)
 
+    # For cell 0 (old)
+    #buttonForCellZero = Button(gamepvcom, text=" ", width=16, height=4, font=("Arial", 9))
+    #buttonForCellZero["command"] = fieldZeroPlayer
+    #buttonForCellZero.grid(row=1, column=1)
+
+    #buttonForCellZeroP = Button(gamepvcom, text="O", width=16, height=4, font=("Arial", 9))
+    #buttonForCellZeroP["command"] = fieldFilled
+
+    #buttonForCellZeroCom = Button(gamepvcom, text="X", width=16, height=4, font=("Arial", 9))
+    #buttonForCellZeroCom["command"] = fieldFilled
+
     # For cell 0 
     buttonForCellZero = Button(gamepvcom, text=" ", width=16, height=4, font=("Arial", 9))
     buttonForCellZero["command"] = fieldZeroPlayer
     buttonForCellZero.grid(row=1, column=1)
 
-    buttonForCellZeroP1 = Button(gamepvcom, text="O", width=16, height=4, font=("Arial", 9))
+    buttonForCellZeroP1 = Button(gamepvcom, image=oPhotoTexture, width=128, height=64, font=("Arial", 9))
+    buttonForCellZeroP1.image = oPhotoTexture
     buttonForCellZeroP1["command"] = fieldFilled
 
-    buttonForCellZeroP2 = Button(gamepvcom, text="X", width=16, height=4, font=("Arial", 9))
+    buttonForCellZeroP2 = Button(gamepvcom, image=xPhotoTexture, width=128, height=64, font=("Arial", 9))
+    buttonForCellZeroP2.image = xPhotoTexture
     buttonForCellZeroP2["command"] = fieldFilled
 
     # Placeholder between cell 0 and 1
     placeholder1 = Label(gamepvcom, text="", font=("Arial", 2))
     placeholder1.grid(row=1, column=2)
 
+    # For cell 1 (old)
+    #buttonForCellOne = Button(gamepvcom, text=" ", width=16, height=4, font=("Arial", 9))
+    #buttonForCellOne["command"] = fieldOnePlayer
+    #buttonForCellOne.grid(row=1, column=3)
+
+    #buttonForCellOneP = Button(gamepvcom, text="O", width=16, height=4, font=("Arial", 9))
+    #buttonForCellOneP["command"] = fieldFilled
+
+    #buttonForCellOneCom = Button(gamepvcom, text="X", width=16, height=4, font=("Arial", 9))
+    #buttonForCellOneCom["command"] = fieldFilled
+
     # For cell 1 
     buttonForCellOne = Button(gamepvcom, text=" ", width=16, height=4, font=("Arial", 9))
     buttonForCellOne["command"] = fieldOnePlayer
     buttonForCellOne.grid(row=1, column=3)
 
-    buttonForCellOneP1 = Button(gamepvcom, text="O", width=16, height=4, font=("Arial", 9))
+    buttonForCellOneP1 = Button(gamepvcom, image=oPhotoTexture, width=128, height=64, font=("Arial", 9))
+    buttonForCellOneP1.image = oPhotoTexture
     buttonForCellOneP1["command"] = fieldFilled
 
-    buttonForCellOneP2 = Button(gamepvcom, text="X", width=16, height=4, font=("Arial", 9))
+    buttonForCellOneP2 = Button(gamepvcom, image=xPhotoTexture, width=128, height=64, font=("Arial", 9))
+    buttonForCellOneP2.image = xPhotoTexture
     buttonForCellOneP2["command"] = fieldFilled
 
     # Placeholder between cell 1 and 2
     placeholder2 = Label(gamepvcom, text="", font=("Arial", 2))
     placeholder2.grid(row=1, column=4)
 
+    # For cell 2 (old)
+    #buttonForCellTwo = Button(gamepvcom, text=" ", width=16, height=4, font=("Arial", 9))
+    #buttonForCellTwo["command"] = fieldTwoPlayer
+    #buttonForCellTwo.grid(row=1, column=5)
+
+    #buttonForCellTwoP = Button(gamepvcom, text="O", width=16, height=4, font=("Arial", 9))
+    #buttonForCellTwoP["command"] = fieldFilled
+
+    #buttonForCellTwoP2 = Button(gamepvcom, text="X", width=16, height=4, font=("Arial", 9))
+    #buttonForCellTwoP2["command"] = fieldFilled
+
     # For cell 2 
     buttonForCellTwo = Button(gamepvcom, text=" ", width=16, height=4, font=("Arial", 9))
     buttonForCellTwo["command"] = fieldTwoPlayer
     buttonForCellTwo.grid(row=1, column=5)
 
-    buttonForCellTwoP1 = Button(gamepvcom, text="O", width=16, height=4, font=("Arial", 9))
+    buttonForCellTwoP1 = Button(gamepvcom, image=oPhotoTexture, width=128, height=64, font=("Arial", 9))
+    buttonForCellTwoP1.image = oPhotoTexture
     buttonForCellTwoP1["command"] = fieldFilled
 
-    buttonForCellTwoP2 = Button(gamepvcom, text="X", width=16, height=4, font=("Arial", 9))
+    buttonForCellTwoP2 = Button(gamepvcom, image=xPhotoTexture, width=128, height=64, font=("Arial", 9))
+    buttonForCellTwoP2.image = xPhotoTexture
     buttonForCellTwoP2["command"] = fieldFilled
 
     # Placeholder between cell 2 and the right of the window
@@ -501,74 +576,152 @@ def playerVsPlayer(ticTacPyApp):
     placeholder4 = Label(gamepvcom, text="", font=("Arial", 2))
     placeholder4.grid(row=2, column=0)
 
+    # For cell 3 (old)
+    #buttonForCellThree = Button(gamepvcom, text=" ", width=16, height=4, font=("Arial", 9))
+    #buttonForCellThree["command"] = fieldThreePlayer
+    #buttonForCellThree.grid(row=3, column=1)
+
+    #buttonForCellThreeP = Button(gamepvcom, text="O", width=16, height=4, font=("Arial", 9))
+    #buttonForCellThreeP["command"] = fieldFilled
+
+    #buttonForCellThreeP2 = Button(gamepvcom, text="X", width=16, height=4, font=("Arial", 9))
+    #buttonForCellThreeP2["command"] = fieldFilled
+
     # For cell 3 
     buttonForCellThree = Button(gamepvcom, text=" ", width=16, height=4, font=("Arial", 9))
     buttonForCellThree["command"] = fieldThreePlayer
     buttonForCellThree.grid(row=3, column=1)
 
-    buttonForCellThreeP1 = Button(gamepvcom, text="O", width=16, height=4, font=("Arial", 9))
+    buttonForCellThreeP1 = Button(gamepvcom, image=oPhotoTexture, width=128, height=64, font=("Arial", 9))
+    buttonForCellThreeP1.image = oPhotoTexture
     buttonForCellThreeP1["command"] = fieldFilled
 
-    buttonForCellThreeP2 = Button(gamepvcom, text="X", width=16, height=4, font=("Arial", 9))
+    buttonForCellThreeP2 = Button(gamepvcom, image=xPhotoTexture, width=128, height=64, font=("Arial", 9))
+    buttonForCellThreeP2.image = xPhotoTexture
     buttonForCellThreeP2["command"] = fieldFilled
+
+    # For cell 4 (old)
+    #buttonForCellFour = Button(gamepvcom, text=" ", width=16, height=4, font=("Arial", 9))
+    #buttonForCellFour["command"] = fieldFourPlayer
+    #buttonForCellFour.grid(row=3, column=3)
+
+    #buttonForCellFourP = Button(gamepvcom, text="O", width=16, height=4, font=("Arial", 9))
+    #buttonForCellFourP["command"] = fieldFilled
+
+    #buttonForCellFourP2 = Button(gamepvcom, text="X", width=16, height=4, font=("Arial", 9))
+    #buttonForCellFourP2["command"] = fieldFilled
 
     # For cell 4 
     buttonForCellFour = Button(gamepvcom, text=" ", width=16, height=4, font=("Arial", 9))
     buttonForCellFour["command"] = fieldFourPlayer
     buttonForCellFour.grid(row=3, column=3)
 
-    buttonForCellFourP1 = Button(gamepvcom, text="O", width=16, height=4, font=("Arial", 9))
+    buttonForCellFourP1 = Button(gamepvcom, image=oPhotoTexture, width=128, height=64, font=("Arial", 9))
+    buttonForCellFourP1.image = oPhotoTexture
     buttonForCellFourP1["command"] = fieldFilled
 
-    buttonForCellFourP2 = Button(gamepvcom, text="X", width=16, height=4, font=("Arial", 9))
+    buttonForCellFourP2 = Button(gamepvcom, image=xPhotoTexture, width=128, height=64, font=("Arial", 9))
+    buttonForCellFourP2.image = xPhotoTexture
     buttonForCellFourP2["command"] = fieldFilled
+
+    # For cell 5 (old)
+    #buttonForCellFive = Button(gamepvcom, text=" ", width=16, height=4, font=("Arial", 9))
+    #buttonForCellFive["command"] = fieldFivePlayer
+    #buttonForCellFive.grid(row=3, column=5)
+
+    #buttonForCellFiveP = Button(gamepvcom, text="O", width=16, height=4, font=("Arial", 9))
+    #buttonForCellFiveP["command"] = fieldFilled
+
+    #buttonForCellFiveP2 = Button(gamepvcom, text="X", width=16, height=4, font=("Arial", 9))
+    #buttonForCellFiveP2["command"] = fieldFilled
 
     # For cell 5
     buttonForCellFive = Button(gamepvcom, text=" ", width=16, height=4, font=("Arial", 9))
     buttonForCellFive["command"] = fieldFivePlayer
     buttonForCellFive.grid(row=3, column=5)
 
-    buttonForCellFiveP1 = Button(gamepvcom, text="O", width=16, height=4, font=("Arial", 9))
+    buttonForCellFiveP1 = Button(gamepvcom, image=oPhotoTexture, width=128, height=64, font=("Arial", 9))
+    buttonForCellFiveP1.image = oPhotoTexture
     buttonForCellFiveP1["command"] = fieldFilled
 
-    buttonForCellFiveP2 = Button(gamepvcom, text="X", width=16, height=4, font=("Arial", 9))
+    buttonForCellFiveP2 = Button(gamepvcom, image=xPhotoTexture, width=128, height=64, font=("Arial", 9))
+    buttonForCellFiveP2.image = xPhotoTexture
     buttonForCellFiveP2["command"] = fieldFilled
 
     # Placeholder between row 1 and 2
     placeholder5 = Label(gamepvcom, text="", font=("Arial", 2))
     placeholder5.grid(row=4, column=0)
 
+    # For cell 6 (old)
+    #buttonForCellSix = Button(gamepvcom, text=" ", width=16, height=4, font=("Arial", 9))
+    #buttonForCellSix["command"] = fieldSixPlayer
+    #buttonForCellSix.grid(row=5, column=1)
+
+    #buttonForCellSixP = Button(gamepvcom, text="O", width=16, height=4, font=("Arial", 9))
+    #buttonForCellSixP["command"] = fieldFilled
+
+    #buttonForCellSixP2 = Button(gamepvcom, text="X", width=16, height=4, font=("Arial", 9))
+    #buttonForCellSixP2["command"] = fieldFilled
+
     # For cell 6
     buttonForCellSix = Button(gamepvcom, text=" ", width=16, height=4, font=("Arial", 9))
     buttonForCellSix["command"] = fieldSixPlayer
     buttonForCellSix.grid(row=5, column=1)
 
-    buttonForCellSixP1 = Button(gamepvcom, text="O", width=16, height=4, font=("Arial", 9))
+    buttonForCellSixP1 = Button(gamepvcom, image=oPhotoTexture, width=128, height=64, font=("Arial", 9))
+    buttonForCellSixP1.image = oPhotoTexture
     buttonForCellSixP1["command"] = fieldFilled
 
-    buttonForCellSixP2 = Button(gamepvcom, text="X", width=16, height=4, font=("Arial", 9))
+    buttonForCellSixP2 = Button(gamepvcom, image=xPhotoTexture, width=128, height=64, font=("Arial", 9))
+    buttonForCellSixP2.image = xPhotoTexture
     buttonForCellSixP2["command"] = fieldFilled
+
+    # For cell 7 (old)
+    #buttonForCellSeven = Button(gamepvcom, text=" ", width=16, height=4, font=("Arial", 9))
+    #buttonForCellSeven["command"] = fieldSevenPlayer
+    #buttonForCellSeven.grid(row=5, column=3)
+
+    #buttonForCellSevenP = Button(gamepvcom, text="O", width=16, height=4, font=("Arial", 9))
+    #buttonForCellSevenP["command"] = fieldFilled
+
+    #buttonForCellSevenP2 = Button(gamepvcom, text="X", width=16, height=4, font=("Arial", 9))
+    #buttonForCellSevenP2["command"] = fieldFilled
 
     # For cell 7
     buttonForCellSeven = Button(gamepvcom, text=" ", width=16, height=4, font=("Arial", 9))
     buttonForCellSeven["command"] = fieldSevenPlayer
     buttonForCellSeven.grid(row=5, column=3)
 
-    buttonForCellSevenP1 = Button(gamepvcom, text="O", width=16, height=4, font=("Arial", 9))
+    buttonForCellSevenP1 = Button(gamepvcom, image=oPhotoTexture, width=128, height=64, font=("Arial", 9))
+    buttonForCellSevenP1.image = oPhotoTexture
     buttonForCellSevenP1["command"] = fieldFilled
 
-    buttonForCellSevenP2 = Button(gamepvcom, text="X", width=16, height=4, font=("Arial", 9))
+    buttonForCellSevenP2 = Button(gamepvcom, image=xPhotoTexture, width=128, height=64, font=("Arial", 9))
+    buttonForCellSevenP2.image = xPhotoTexture
     buttonForCellSevenP2["command"] = fieldFilled
+
+    # For cell 8 (old)
+    #buttonForCellEight = Button(gamepvcom, text=" ", width=16, height=4, font=("Arial", 9))
+    #buttonForCellEight["command"] = fieldEightPlayer
+    #buttonForCellEight.grid(row=5, column=5)
+
+    #buttonForCellEightP = Button(gamepvcom, text="O", width=16, height=4, font=("Arial", 9))
+    #buttonForCellEightP["command"] = fieldFilled
+
+    #buttonForCellEightP2 = Button(gamepvcom, text="X", width=16, height=4, font=("Arial", 9))
+    #buttonForCellEightP2["command"] = fieldFilled
 
     # For cell 8
     buttonForCellEight = Button(gamepvcom, text=" ", width=16, height=4, font=("Arial", 9))
     buttonForCellEight["command"] = fieldEightPlayer
     buttonForCellEight.grid(row=5, column=5)
 
-    buttonForCellEightP1 = Button(gamepvcom, text="O", width=16, height=4, font=("Arial", 9))
+    buttonForCellEightP1 = Button(gamepvcom, image=oPhotoTexture, width=128, height=64, font=("Arial", 9))
+    buttonForCellEightP1.image = oPhotoTexture
     buttonForCellEightP1["command"] = fieldFilled
 
-    buttonForCellEightP2 = Button(gamepvcom, text="X", width=16, height=4, font=("Arial", 9))
+    buttonForCellEightP2 = Button(gamepvcom, image=xPhotoTexture, width=128, height=64, font=("Arial", 9))
+    buttonForCellEightP2.image = xPhotoTexture
     buttonForCellEightP2["command"] = fieldFilled
 
     # Placeholder between row 2 and the low of the window

@@ -7,12 +7,41 @@ from PIL import Image, ImageTk
 # Player is O, Computer is X.
 
 def playerVsComputer(ticTacPyApp):
+    maximgwidth = 128
+    maximgheight = 64
+
     field = [[" ", " ", " "], [" ", " ", " "], [" ", " ", " "]]
 
     oTexture = Image.open(f"{ticTacPyApp.ttpPathFinal}/{ticTacPyApp.themedir}/assets/o.png")
+    oTextureRatio = oTexture.width / oTexture.height
+    oTextureFinalWidth = oTexture.width
+
+    while oTextureFinalWidth > maximgwidth:
+        oTextureFinalWidth -= 1
+
+    oTextureFinalHeight = oTextureFinalWidth / oTextureRatio
+
+    while oTextureFinalHeight > maximgheight:
+        oTextureFinalWidth = oTextureFinalWidth / 2
+        oTextureFinalHeight = oTextureFinalHeight / 2
+
+    oTexture = oTexture.resize([int(oTextureFinalWidth), int(oTextureFinalHeight)], Image.ANTIALIAS)
     oPhotoTexture = ImageTk.PhotoImage(oTexture)
 
     xTexture = Image.open(f"{ticTacPyApp.ttpPathFinal}/{ticTacPyApp.themedir}/assets/x.png")
+    xTextureRatio = xTexture.width / xTexture.height
+    xTextureFinalWidth = xTexture.width
+
+    while xTextureFinalWidth > maximgwidth:
+        xTextureFinalWidth -= 1
+
+    xTextureFinalHeight = xTextureFinalWidth / xTextureRatio
+
+    while xTextureFinalHeight > maximgheight:
+        xTextureFinalWidth = xTextureFinalWidth / 2
+        xTextureFinalHeight = xTextureFinalHeight / 2
+
+    xTexture = xTexture.resize([int(xTextureFinalWidth), int(xTextureFinalHeight)], Image.ANTIALIAS)
     xPhotoTexture = ImageTk.PhotoImage(xTexture)
 
     def fieldFilled():
@@ -489,11 +518,11 @@ def playerVsComputer(ticTacPyApp):
     buttonForCellZero["command"] = fieldZeroPlayer
     buttonForCellZero.grid(row=1, column=1)
 
-    buttonForCellZeroP = Button(gamepvcom, image=oPhotoTexture, width=16, height=4, font=("Arial", 9))
+    buttonForCellZeroP = Button(gamepvcom, image=oPhotoTexture, width=128, height=64, font=("Arial", 9))
     buttonForCellZeroP.image = oPhotoTexture
     buttonForCellZeroP["command"] = fieldFilled
 
-    buttonForCellZeroCom = Button(gamepvcom, image=xPhotoTexture, width=16, height=4, font=("Arial", 9))
+    buttonForCellZeroCom = Button(gamepvcom, image=xPhotoTexture, width=128, height=64, font=("Arial", 9))
     buttonForCellZeroCom.image = xPhotoTexture
     buttonForCellZeroCom["command"] = fieldFilled
 
@@ -517,11 +546,11 @@ def playerVsComputer(ticTacPyApp):
     buttonForCellOne["command"] = fieldOnePlayer
     buttonForCellOne.grid(row=1, column=3)
 
-    buttonForCellOneP = Button(gamepvcom, image=oPhotoTexture, width=16, height=4, font=("Arial", 9))
+    buttonForCellOneP = Button(gamepvcom, image=oPhotoTexture, width=128, height=64, font=("Arial", 9))
     buttonForCellOneP.image = oPhotoTexture
     buttonForCellOneP["command"] = fieldFilled
 
-    buttonForCellOneCom = Button(gamepvcom, image=xPhotoTexture, width=16, height=4, font=("Arial", 9))
+    buttonForCellOneCom = Button(gamepvcom, image=xPhotoTexture, width=128, height=64, font=("Arial", 9))
     buttonForCellOneCom.image = xPhotoTexture
     buttonForCellOneCom["command"] = fieldFilled
 
@@ -545,11 +574,11 @@ def playerVsComputer(ticTacPyApp):
     buttonForCellTwo["command"] = fieldTwoPlayer
     buttonForCellTwo.grid(row=1, column=5)
 
-    buttonForCellTwoP = Button(gamepvcom, image=oPhotoTexture, width=16, height=4, font=("Arial", 9))
+    buttonForCellTwoP = Button(gamepvcom, image=oPhotoTexture, width=128, height=64, font=("Arial", 9))
     buttonForCellTwoP.image = oPhotoTexture
     buttonForCellTwoP["command"] = fieldFilled
 
-    buttonForCellTwoCom = Button(gamepvcom, image=xPhotoTexture, width=16, height=4, font=("Arial", 9))
+    buttonForCellTwoCom = Button(gamepvcom, image=xPhotoTexture, width=128, height=64, font=("Arial", 9))
     buttonForCellTwoCom.image = xPhotoTexture
     buttonForCellTwoCom["command"] = fieldFilled
 
@@ -577,11 +606,11 @@ def playerVsComputer(ticTacPyApp):
     buttonForCellThree["command"] = fieldThreePlayer
     buttonForCellThree.grid(row=3, column=1)
 
-    buttonForCellThreeP = Button(gamepvcom, image=oPhotoTexture, width=16, height=4, font=("Arial", 9))
+    buttonForCellThreeP = Button(gamepvcom, image=oPhotoTexture, width=128, height=64, font=("Arial", 9))
     buttonForCellThreeP.image = oPhotoTexture
     buttonForCellThreeP["command"] = fieldFilled
 
-    buttonForCellThreeCom = Button(gamepvcom, image=xPhotoTexture, width=16, height=4, font=("Arial", 9))
+    buttonForCellThreeCom = Button(gamepvcom, image=xPhotoTexture, width=128, height=64, font=("Arial", 9))
     buttonForCellThreeCom.image = xPhotoTexture
     buttonForCellThreeCom["command"] = fieldFilled
 
@@ -601,11 +630,11 @@ def playerVsComputer(ticTacPyApp):
     buttonForCellFour["command"] = fieldFourPlayer
     buttonForCellFour.grid(row=3, column=3)
 
-    buttonForCellFourP = Button(gamepvcom, image=oPhotoTexture, width=16, height=4, font=("Arial", 9))
+    buttonForCellFourP = Button(gamepvcom, image=oPhotoTexture, width=128, height=64, font=("Arial", 9))
     buttonForCellFourP.image = oPhotoTexture
     buttonForCellFourP["command"] = fieldFilled
 
-    buttonForCellFourCom = Button(gamepvcom, image=xPhotoTexture, width=16, height=4, font=("Arial", 9))
+    buttonForCellFourCom = Button(gamepvcom, image=xPhotoTexture, width=128, height=64, font=("Arial", 9))
     buttonForCellFourCom.image = xPhotoTexture
     buttonForCellFourCom["command"] = fieldFilled
 
@@ -625,11 +654,11 @@ def playerVsComputer(ticTacPyApp):
     buttonForCellFive["command"] = fieldFivePlayer
     buttonForCellFive.grid(row=3, column=5)
 
-    buttonForCellFiveP = Button(gamepvcom, image=oPhotoTexture, width=16, height=4, font=("Arial", 9))
+    buttonForCellFiveP = Button(gamepvcom, image=oPhotoTexture, width=128, height=64, font=("Arial", 9))
     buttonForCellFiveP.image = oPhotoTexture
     buttonForCellFiveP["command"] = fieldFilled
 
-    buttonForCellFiveCom = Button(gamepvcom, image=xPhotoTexture, width=16, height=4, font=("Arial", 9))
+    buttonForCellFiveCom = Button(gamepvcom, image=xPhotoTexture, width=128, height=64, font=("Arial", 9))
     buttonForCellFiveCom.image = xPhotoTexture
     buttonForCellFiveCom["command"] = fieldFilled
 
@@ -653,11 +682,11 @@ def playerVsComputer(ticTacPyApp):
     buttonForCellSix["command"] = fieldSixPlayer
     buttonForCellSix.grid(row=5, column=1)
 
-    buttonForCellSixP = Button(gamepvcom, image=oPhotoTexture, width=16, height=4, font=("Arial", 9))
+    buttonForCellSixP = Button(gamepvcom, image=oPhotoTexture, width=128, height=64, font=("Arial", 9))
     buttonForCellSixP.image = oPhotoTexture
     buttonForCellSixP["command"] = fieldFilled
 
-    buttonForCellSixCom = Button(gamepvcom, image=xPhotoTexture, width=16, height=4, font=("Arial", 9))
+    buttonForCellSixCom = Button(gamepvcom, image=xPhotoTexture, width=128, height=64, font=("Arial", 9))
     buttonForCellSixCom.image = xPhotoTexture
     buttonForCellSixCom["command"] = fieldFilled
 
@@ -677,11 +706,11 @@ def playerVsComputer(ticTacPyApp):
     buttonForCellSeven["command"] = fieldSevenPlayer
     buttonForCellSeven.grid(row=5, column=3)
 
-    buttonForCellSevenP = Button(gamepvcom, image=oPhotoTexture, width=16, height=4, font=("Arial", 9))
+    buttonForCellSevenP = Button(gamepvcom, image=oPhotoTexture, width=128, height=64, font=("Arial", 9))
     buttonForCellSevenP.image = oPhotoTexture
     buttonForCellSevenP["command"] = fieldFilled
 
-    buttonForCellSevenCom = Button(gamepvcom, image=xPhotoTexture, width=16, height=4, font=("Arial", 9))
+    buttonForCellSevenCom = Button(gamepvcom, image=xPhotoTexture, width=128, height=64, font=("Arial", 9))
     buttonForCellSevenCom.image = xPhotoTexture
     buttonForCellSevenCom["command"] = fieldFilled
 
@@ -701,11 +730,11 @@ def playerVsComputer(ticTacPyApp):
     buttonForCellEight["command"] = fieldEightPlayer
     buttonForCellEight.grid(row=5, column=5)
 
-    buttonForCellEightP = Button(gamepvcom, image=oPhotoTexture, width=16, height=4, font=("Arial", 9))
+    buttonForCellEightP = Button(gamepvcom, image=oPhotoTexture, width=128, height=64, font=("Arial", 9))
     buttonForCellEightP.image = oPhotoTexture
     buttonForCellEightP["command"] = fieldFilled
 
-    buttonForCellEightCom = Button(gamepvcom, image=xPhotoTexture, width=16, height=4, font=("Arial", 9))
+    buttonForCellEightCom = Button(gamepvcom, image=xPhotoTexture, width=128, height=64, font=("Arial", 9))
     buttonForCellEightCom.image = xPhotoTexture
     buttonForCellEightCom["command"] = fieldFilled
 

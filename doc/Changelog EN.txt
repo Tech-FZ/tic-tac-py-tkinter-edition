@@ -10,7 +10,7 @@ Tic Tac Py - Tkinter Edition, Version 2.0.0 Baxter
 - The backend of the language settings has been fixed.
 - A French translation of the changelog is now here.
 - Ukrainian and French language packs are now fully implementable.
-- Theme support has been implemented into easy Player vs. Computer mode.
+- Theme support has been fully implemented.
 
 Tic Tac Py - Tkinter Edition, Version 1.0.2 Avril
 - Date of completion: 9th April, 2022
