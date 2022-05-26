@@ -5,7 +5,12 @@ from tkinter import *
 
 def checkForUpdates(ticTacPyApp, manually):
     try:
-        url = "https://raw.githubusercontent.com/Tech-FZ/tic-tac-py-tkinter-edition/main/ttpupdatefile.tictacpy"
+        # For stable releases, commented out here, DO NOT REMOVE
+        #url = "https://raw.githubusercontent.com/Tech-FZ/tic-tac-py-tkinter-edition/main/ttpupdatefile.tictacpy"
+
+        # For Version 1.1.0 pre-releases
+        url = "https://raw.githubusercontent.com/Tech-FZ/tic-tac-py-tkinter-edition/v1.1.0-workspace/ttpupdatefile.tictacpy"
+        
         rq = requests.get(url, allow_redirects=True)
         newVer = open("ttpupdatefile.tictacpy", "wb+")
         newVer.write(rq.content)
@@ -24,10 +29,16 @@ def checkForUpdates(ticTacPyApp, manually):
             updateAvailable(ticTacPyApp, newMajor, newMinor1, newMinor2)
 
         elif int(newMinor1) > ticTacPyApp.minorVer1:
-            updateAvailable(ticTacPyApp, newMajor, newMinor1, newMinor2)
+            if int(newMajor) >= ticTacPyApp.majorVer:
+                updateAvailable(ticTacPyApp, newMajor, newMinor1, newMinor2)
 
         elif int(newMinor2) > ticTacPyApp.minorVer2:
-            updateAvailable(ticTacPyApp, newMajor, newMinor1, newMinor2)
+            if int(newMajor) >= ticTacPyApp.majorVer and int(newMinor1) >= ticTacPyApp.minorVer1:
+                updateAvailable(ticTacPyApp, newMajor, newMinor1, newMinor2)
+
+            else:
+                if manually == True:
+                    isNewestVer(ticTacPyApp)
 
         else:
             if manually == True:

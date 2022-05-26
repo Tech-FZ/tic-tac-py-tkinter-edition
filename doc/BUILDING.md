@@ -3,11 +3,15 @@
 # Windows
 ## Prerequisites
 OS: Windows 8.1/10/11 (amd64), Server 2012 R2/2016/2019/2022
+
 Processor¹: Intel Core 2 Duo E4400 @ 2 GHz, AMD Athlon 64 X2 3600+ @ 2 GHz or better amd64-compatible processor
+
 RAM²: 4 GB or more
+
 HDD: 1 GB free space or more
 
 ¹ Windows 11 enforces much newer processors for setup
+
 ² You must have at least 6 GB when running Windows 11
 
 ## Instructions
@@ -26,9 +30,13 @@ HDD: 1 GB free space or more
 # Linux
 ## Prerequisites
 Linux kernel: 4.18 or newer
+
 X11 with GUI
+
 Processor: Intel Core 2 Duo E4400 @ 2 GHz, AMD Athlon 64 X2 3600+ @ 2 GHz or better amd64-compatible processor
+
 RAM: 4 GB or more
+
 HDD: 1 GB free space or more
 
 ## Instructions
@@ -46,9 +54,13 @@ HDD: 1 GB free space or more
 # BSD
 ## Prerequisites
 BSD: FreeBSD 12.3 or newer
+
 X11 with GUI
+
 Processor: Intel Core 2 Duo E4400 @ 2 GHz, AMD Athlon 64 X2 3600+ @ 2 GHz or better amd64-compatible processor
+
 RAM: 4 GB or more
+
 HDD: 1 GB free space or more
 
 ## Instructions
