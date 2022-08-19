@@ -1,38 +1,23 @@
 # Tic Tac Py - Tkinter Edition
 
-This is Tic Tac Py - Tkinter Edition which is currently an open beta.
+Due to the [Give up GitHub](https://GiveUpGitHub.org) campaign, the fact that Tic Tac Py and especially its repository became too complex to be migrated as-is and the game being a beginner project with no real future anyway, the owner decided to discontinue and archive the repository, meaning you can no longer contribute here. Thanks to everyone who considered using/showing this program, especially to my family who gave feedback for it.
 
-## We're Using GitHub Under Protest
+## But you migrated some other repositories to Codeberg before! Why not this one?
 
-This project is currently hosted on GitHub.  This is not ideal; GitHub is a
-proprietary, trade-secret system that is not Free and Open Souce Software
-(FOSS).  We are deeply concerned about using a proprietary system like GitHub
-to develop our FOSS project.  We have an
-[open issue](https://github.com/Tech-FZ/tic-tac-py-tkinter-edition/issues/34) where the
-project contributors are actively discussing how we can move away from GitHub
-in the long term.  We urge you to read about the
-[Give up GitHub](https://GiveUpGitHub.org) campaign from
-[the Software Freedom Conservancy](https://sfconservancy.org) to understand
-some of the reasons why GitHub is not a good place to host FOSS projects.
+The previous programs that have already been migrated didn't have an updater (yet). I would have tried to migrate this one as well, but the problem is that there are too many branches with previews which were still in development. If I was to give these previews an upgrade for the Tic Tac Py Updater, this would have been a complicated task. For a program which was only written as a practice for better stuff (like EmuGUI or Bomb Quest), this effort is not worth it!
 
-If you are a contributor who personally has already quit using GitHub, please 
-contact me at lucien-rowan#1916 on Discord so we can find a solution together.
+## Can I contribute to Tic Tac Py?
 
-Any use of this project's code by GitHub Copilot, past or present, is done
-without our permission.  We do not consent to GitHub's use of this project's
-code in Copilot.
+Not to this repository anymore, as it is archived and read-only. If you want to continue development, don't hesitate to fork this. Nicolas Lucien however will no longer support this program.
 
-![Logo of the GiveUpGitHub campaign](https://sfconservancy.org/img/GiveUpGitHub.png)
+## Why do you participate in the "Give up GitHub" campaign in the first place?
 
-# Installing the software
+Some developers, including me, are concerned about how GitHub Copilot has been trained. Microsoft and its subsidiary might have used FOSS code, including those which require you to credit the copyright holders and/or to open-source your derivate as well. If they did train their AI with such code, they are possibly violating copyright and did this without the creator's permission. Even worse is that they made Copilot for profit.
 
-Just download the game from the releases, extract the archive and have fun. Those using Avira may need to get the game from quarantine. macOS users need to install Python and download the source code due to me not having a Mac. :( Linux users however can download the binaries for their machine, but shouldn't have the problem Windows users possibly have.
+## Okay, I'm concerned about this as well! How do I learn more about this campaign?
 
-# Building the software
+The [Software Freedom Conservancy](https://sfconservancy.org/) has made a seperate page just for that. [See Software Freedom Conservancy's *Give Up  GitHub* site for details](https://GiveUpGitHub.org). For me, I already migrated most of my programs to [Codeberg](https://codeberg.org/).
 
-See BUILDING.md in the docs folder for instructions.
+## We want Tic Tac Py! We want Tic Tac Py!
 
-# Contribute
-
-Good at making icons? Wanna help translate the game so more people can play? Any other ideas? You're always welcome to contribute.
-NEW RULE: Before you can do that, you must comment on an issue or - if not yet available - open a new one stating that you will fix or add it yourself.
+Okay! If there are enough users who still care about this project, I might as well consider to revive this project. However, please don't expect that to happen.
