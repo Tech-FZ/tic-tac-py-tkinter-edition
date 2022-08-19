@@ -6,6 +6,10 @@ Due to the [Give up GitHub](https://GiveUpGitHub.org) campaign, the fact that Ti
 
 The previous programs that have already been migrated didn't have an updater (yet). I would have tried to migrate this one as well, but the problem is that there are too many branches with previews which were still in development. If I was to give these previews an upgrade for the Tic Tac Py Updater, this would have been a complicated task. For a program which was only written as a practice for better stuff (like EmuGUI or Bomb Quest), this effort is not worth it!
 
+## Can I still use Tic Tac Py?
+
+On Windows 8.1, 10, 11, its server counterparts, FreeBSD 12.x, 13.x, derivates of those and also several Linux distributions that were supported in 2022, depending on the TTP version, it should still run, however, compatibility with newer operating systems can no longer be guaranteed. If you were to have difficulties on future versions of Windows, Windows 10 or Windows 11, you might also get it to run with compatibility mode. If not, you can still use a virtual machine running one of those operating systems. Tic Tac Py will no longer be optimized for later operating systems.
+
 ## Can I contribute to Tic Tac Py?
 
 Not to this repository anymore, as it is archived and read-only. If you want to continue development, don't hesitate to fork this. Nicolas Lucien however will no longer support this program.
