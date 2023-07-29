@@ -11,7 +11,7 @@ class App:
         # Version definition system for the upcoming updater
         self.majorVer = 1
         self.minorVer1 = 0
-        self.minorVer2 = 2
+        self.minorVer2 = 3
 
         self.gamemode = 0
         self.lang = "not defined"
@@ -99,7 +99,7 @@ class App:
     
 ticTacPyApp = App()
 
-print(f"Tic Tac Py, Tkinter Edition, Version {ticTacPyApp.majorVer}.{ticTacPyApp.minorVer1}.{ticTacPyApp.minorVer2}")
+print(f"Tic Tac Py Revived, Version {ticTacPyApp.majorVer}.{ticTacPyApp.minorVer1}.{ticTacPyApp.minorVer2}")
 
 root = Tk()
 
@@ -107,7 +107,7 @@ determineLang(ticTacPyApp)
 scanForLanguages(ticTacPyApp)
 checkForUpdates(ticTacPyApp, False)
 ticTacPyApp.languagesAvailable.append(ticTacPyApp.default)
-root.title("Tic Tac Py Tkinter Edition")
+root.title("Tic Tac Py Revived")
 root.geometry()
 root.resizable(width=0, height=0)
 

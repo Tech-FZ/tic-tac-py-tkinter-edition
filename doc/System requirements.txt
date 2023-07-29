@@ -1,16 +1,16 @@
 Requirements for Windows machines:
-OS: Windows 8.1/10/11, Windows Server 2012 R2/2016/2019/2022
-Python: 3.6.x, 3.7.x, 3.8.x or 3.9.x
-Processor: Single Core i386 or amd64 processor running at 2 GHz or better
-RAM: 4 GB or more
+OS: Windows 10/11, Windows Server 2016/2019/2022
+Python: 3.8.x, 3.9.x, 3.10.x or 3.11.x
+Processor: Single Core i386 or amd64 processor running at 2 GHz or better (Dual Core for Windows 11 users)
+RAM: 4 GB or more (6 GB for Windows 11 users)
 Hard drive space: 20 MB of free space
 Graphics card: An integrated graphics card from the late 2000s to early 2010s does the thing
 
 Requirements for Linux machines:
-OS: Debian 9 or newer, Ubuntu 18.04 LTS or newer, Fedora 34 or newer, Arch Linux, RHEL 7 or newer or other distros based on them
-Python: 3.6.x, 3.7.x, 3.8.x or 3.9.x
+OS: If it doesn't run, you can contact me. Should work on Debian 11, Ubuntu 20.04 LTS, Arch, openSUSE Tumbleweed, openSUSE Leap 15.4, RHEL 7, Fedora 37 and their derivates.
+Python: Just use the one included in your system. If it isn't there at all, 3.8.x or later.
 Processor: Dual Core amd64 processor running at 2 GHz or better, although exceptions can be made for some configurations
-RAM: 4 GB, although exceptions can be made for some configurations
+RAM: 4 GB, although exceptions can be made for some configurations (like 2 GB for antiX)
 Hard drive space: 20 MB of free space
 Graphics card: It should be able to play YouTube videos smoothly
 Additional modules: Tkinter must be installed
