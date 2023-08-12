@@ -23,11 +23,21 @@ def checkForUpdates(ticTacPyApp, manually):
         if int(newMajor) > ticTacPyApp.majorVer:
             updateAvailable(ticTacPyApp, newMajor, newMinor1, newMinor2)
 
-        elif int(newMinor1) > ticTacPyApp.minorVer1:
-            updateAvailable(ticTacPyApp, newMajor, newMinor1, newMinor2)
+        elif int(newMajor) == ticTacPyApp.majorVer:
+            if int(newMinor1) > ticTacPyApp.minorVer1:
+                updateAvailable(ticTacPyApp, newMajor, newMinor1, newMinor2)
 
-        elif int(newMinor2) > ticTacPyApp.minorVer2:
-            updateAvailable(ticTacPyApp, newMajor, newMinor1, newMinor2)
+            elif int(newMinor1) == ticTacPyApp.minorVer1:
+                if int(newMinor2) > ticTacPyApp.minorVer2:
+                    updateAvailable(ticTacPyApp, newMajor, newMinor1, newMinor2)
+
+                else:
+                    if manually == True:
+                        isNewestVer(ticTacPyApp)
+
+            else:
+                if manually == True:
+                    isNewestVer(ticTacPyApp)                
 
         else:
             if manually == True:

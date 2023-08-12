@@ -9,9 +9,9 @@ import platform
 class App:
     def __init__(self):
         # Version definition system for the upcoming updater
-        self.majorVer = 1
+        self.majorVer = 2
         self.minorVer1 = 0
-        self.minorVer2 = 3
+        self.minorVer2 = 0
 
         self.gamemode = 0
         self.lang = "not defined"
