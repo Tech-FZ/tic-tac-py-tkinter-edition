@@ -5,6 +5,10 @@ from gamemodes.locales.localeManager import *
 from gamemodes.settings import *
 from gamemodes.options.updater import *
 import platform
+import os
+
+if platform.system != "Windows":
+    import pwd
 
 class App:
     def __init__(self):
@@ -84,8 +88,34 @@ class App:
         self.txtIsNewest = "You're running the latest version already!"
         self.noInternet = "TTP Updater failed to connect to the GitHub repository\nservers of the game.\nPlease check your internet connection\nand try again."
 
+        self.userdir = ""
+
         # Preparing for hard KI
         self.gridCopy = []
+
+    def prepGameFiles(self):
+        try:
+            username = os.getlogin()
+
+        except:
+            username = pwd.getpwuid(os.getuid())[0]
+
+        if platform.system() == "Windows":
+            self.userdir = f"C:\\Users\\{username}\\AppData\\Roaming\\Tic Tac Py"
+
+        else:
+            if username == "root":
+                self.userdir = "/root/Tic Tac Py"
+
+            else:
+                self.userdir = f"/home/{username}/Tic Tac Py"
+
+        if os.path.exists(self.userdir) == False:
+            try:
+                os.mkdir(self.userdir)
+
+            except:
+                print("Could not create the file")
 
     def gamemodeCheck(self):
         if self.gamemode.get() == 1:
@@ -103,6 +133,7 @@ print(f"Tic Tac Py Revived, Version {ticTacPyApp.majorVer}.{ticTacPyApp.minorVer
 
 root = Tk()
 
+ticTacPyApp.prepGameFiles()
 determineLang(ticTacPyApp)
 scanForLanguages(ticTacPyApp)
 checkForUpdates(ticTacPyApp, False)

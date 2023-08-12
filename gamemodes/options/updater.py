@@ -7,11 +7,11 @@ def checkForUpdates(ticTacPyApp, manually):
     try:
         url = "https://raw.githubusercontent.com/Tech-FZ/tic-tac-py-tkinter-edition/main/ttpupdatefile.tictacpy"
         rq = requests.get(url, allow_redirects=True)
-        newVer = open("ttpupdatefile.tictacpy", "wb+")
+        newVer = open(ticTacPyApp.userdir + "/ttpupdatefile.tictacpy", "wb+")
         newVer.write(rq.content)
         newVer.close()
 
-        newVer = open("ttpupdatefile.tictacpy", "r+")
+        newVer = open(ticTacPyApp.userdir + "/ttpupdatefile.tictacpy", "r+")
         newVerContent = newVer.readlines()
         newMajor = newVerContent[0].replace("/newest-major ", "")
         newMajor = newMajor.replace("\n", "")

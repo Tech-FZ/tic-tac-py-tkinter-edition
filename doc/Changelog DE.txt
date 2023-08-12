@@ -1,6 +1,7 @@
 Tic Tac Py Revived, Version 2.0.0
 - Date of completion: 12.08.2023
 - Das Updater-Problem wurde gelöst.
+- Dateien werden nun im Nutzerverzeichnis gelagert.
 
 Tic Tac Py Revived, Version 1.0.3 Avril
 - Abgeschlossen am 29.07.2023

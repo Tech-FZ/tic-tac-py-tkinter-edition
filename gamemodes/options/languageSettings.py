@@ -1,15 +1,19 @@
 from tkinter import *
 from gamemodes.locales.localeManager import *
 import platform
+import os
+
+if platform.system != "Windows":
+    import pwd
 
 def langSettingMenu(ticTacPyApp):
     def applyFunction():
-        options = open("gamemodes/options/options.tictacpy", "r")
+        options = open(ticTacPyApp.userdir + "/options.tictacpy", "r")
         content = options.readlines()
         lang = content[0]
         options.close()
 
-        options = open("gamemodes/options/options.tictacpy", "w")
+        options = open(ticTacPyApp.userdir + "/options.tictacpy", "w")
         for line in content:
             if languageSelector.selection_get() == "English (United States)":
                 options.write(line.replace(lang, "/lang en_US"))

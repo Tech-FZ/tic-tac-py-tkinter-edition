@@ -117,42 +117,84 @@ def determineLang(ticTacPyApp):
     locTuple = locale.getlocale()
     langofSystem = locTuple[0]
 
-    options = open("gamemodes/options/options.tictacpy", "r")
-    content = options.readlines()
-    lang = content[0]
-    options.close()
+    try:
+        options = open(ticTacPyApp.userdir + "/options.tictacpy", "r")
+        content = options.readlines()
+        lang = content[0]
+        options.close()
 
-    if lang == "/lang en_GB":
-        englishGB(ticTacPyApp)
+        if lang == "/lang en_GB":
+            englishGB(ticTacPyApp)
     
-    elif lang == "/lang en_US":
-        englishUS(ticTacPyApp)
+        elif lang == "/lang en_US":
+            englishUS(ticTacPyApp)
     
-    elif lang == "/lang en_CA":
-        englishCA(ticTacPyApp)
+        elif lang == "/lang en_CA":
+            englishCA(ticTacPyApp)
     
-    elif lang == "/lang en_AU":
-        englishAU(ticTacPyApp)
+        elif lang == "/lang en_AU":
+            englishAU(ticTacPyApp)
     
-    elif lang == "/lang de_DE":
-        germanDE(ticTacPyApp)
+        elif lang == "/lang de_DE":
+            germanDE(ticTacPyApp)
     
-    elif lang == "/lang de_AT":
-        germanAT(ticTacPyApp)
+        elif lang == "/lang de_AT":
+            germanAT(ticTacPyApp)
     
-    elif lang == "/lang de_CH":
-        germanCH(ticTacPyApp)
+        elif lang == "/lang de_CH":
+            germanCH(ticTacPyApp)
     
-    elif lang == "/lang ja_JP":
-        japanese(ticTacPyApp)
+        elif lang == "/lang ja_JP":
+            japanese(ticTacPyApp)
 
-    elif lang == "/lang fr_FR":
-        frenchFR(ticTacPyApp)
+        elif lang == "/lang fr_FR":
+            frenchFR(ticTacPyApp)
 
-    elif lang == "/lang fr_CA":
-        frenchCA(ticTacPyApp)
+        elif lang == "/lang fr_CA":
+            frenchCA(ticTacPyApp)
 
-    else:
+        else:
+            # British English
+            if langofSystem == "en_GB":
+                englishGB(ticTacPyApp)
+        
+            # Canadian English
+            elif langofSystem == "en_CA":
+                englishCA(ticTacPyApp)
+        
+            # Australian English
+            elif langofSystem == "en_AU":
+                englishAU(ticTacPyApp)
+    
+            # German German/Deutsches Deutsch
+            elif langofSystem == "de_DE":
+                germanDE(ticTacPyApp)
+        
+            # Austrian German/Österreichisches Deutsch
+            elif langofSystem == "de_AT":
+                germanAT(ticTacPyApp)
+        
+            # Swiss German/Switzerdütsch
+            elif langofSystem == "de_CH":
+                germanCH(ticTacPyApp)
+        
+            elif langofSystem == "ja_JP":
+                japanese(ticTacPyApp)
+
+            elif langofSystem == "fr_FR":
+                frenchFR(ticTacPyApp)
+
+            elif langofSystem == "fr_CA":
+                frenchCA(ticTacPyApp)
+    
+            # American English (if primary language not working or being American English)
+            else:
+                englishUS(ticTacPyApp)
+
+    except:
+        options = open(ticTacPyApp.userdir + "/options.tictacpy", "w+")
+        options.write("/lang std")
+
         # British English
         if langofSystem == "en_GB":
             englishGB(ticTacPyApp)
