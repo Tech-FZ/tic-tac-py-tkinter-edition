@@ -1,10 +1,6 @@
 from tkinter import *
 from gamemodes.locales.localeManager import *
 import platform
-import os
-
-if platform.system != "Windows":
-    import pwd
 
 def langSettingMenu(ticTacPyApp):
     def applyFunction():

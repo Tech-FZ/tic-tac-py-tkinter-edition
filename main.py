@@ -7,8 +7,11 @@ from gamemodes.options.updater import *
 import platform
 import os
 
-if platform.system != "Windows":
+try:
     import pwd
+
+except:
+    pass
 
 class App:
     def __init__(self):
